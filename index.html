@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Th1nkN3st | Smart Tools & Tech Insights</title>
+    <meta name="title" content="Th1nkN3st | Smart Tools & Tech Insights">
+    <meta name="description" content="Curated tools, gadgets, and insights that make technology simpler and smarter. DevSecOps tips, automation tricks, and affiliate finds for your tech life.">
+    <meta name="keywords" content="smart tools, tech gadgets, DevSecOps, automation, technology reviews, affiliate products, tech insights, security tools">
+    <meta name="author" content="Th1nkN3st">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://th1nkn3st.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://th1nkn3st.com/">
+    <meta property="og:title" content="Th1nkN3st | Smart Tools & Tech Insights">
+    <meta property="og:description" content="Curated tools, gadgets, and insights that make technology simpler and smarter. DevSecOps tips, automation tricks, and affiliate finds for your tech life.">
+    <meta property="og:image" content="https://th1nkn3st.com/og-image.png">
+    <meta property="og:site_name" content="Th1nkN3st">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://th1nkn3st.com/">
+    <meta property="twitter:title" content="Th1nkN3st | Smart Tools & Tech Insights">
+    <meta property="twitter:description" content="Curated tools, gadgets, and insights that make technology simpler and smarter. DevSecOps tips, automation tricks, and affiliate finds for your tech life.">
+    <meta property="twitter:image" content="https://th1nkn3st.com/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232563eb' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M30 35 Q50 20 70 35 Q65 45 50 50 Q35 45 30 35' fill='%23ffffff'/%3E%3Ccircle cx='42' cy='40' r='3' fill='%232563eb'/%3E%3Ccircle cx='58' cy='40' r='3' fill='%232563eb'/%3E%3Cpath d='M35 60 Q50 75 65 60' stroke='%23ffffff' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+        
+        /* Main container */
+        .container {
+            max-width: 720px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Decorative background elements */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        /* Logo/Brand mark */
+        .logo {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .logo-svg {
+            width: 80px;
+            height: 80px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover .logo-svg {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .description {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+        
+        .coming-soon {
+            font-size: 1rem;
+            color: #059669;
+            font-weight: 600;
+            background: #d1fae5;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 2rem 0;
+            border: 1px solid #a7f3d0;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .footer a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .footer a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        
+        /* Accessibility - Focus styles */
+        *:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            
+            .container {
+                padding: 2rem 1.5rem;
+                border-radius: 12px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.125rem;
+            }
+            
+            .description {
+                font-size: 1rem;
+            }
+            
+            .logo-svg {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                margin: 0.5rem;
+                padding: 1.5rem 1rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            .coming-soon {
+                font-size: 0.875rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+        
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .container {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <!-- Logo/Brand Mark -->
+        <div class="logo">
+            <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-label="Th1nkN3st Logo">
+                <!-- Nest shape -->
+                <circle cx="50" cy="50" r="45" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+                <!-- Brain/nest pattern -->
+                <path d="M25 40 Q50 25 75 40 Q70 50 50 55 Q30 50 25 40" fill="#ffffff"/>
+                <path d="M30 45 Q50 35 70 45" stroke="#2563eb" stroke-width="2" fill="none"/>
+                <path d="M35 50 Q50 42 65 50" stroke="#2563eb" stroke-width="1.5" fill="none"/>
+                <!-- Circuit-like dots -->
+                <circle cx="40" cy="42" r="2" fill="#2563eb"/>
+                <circle cx="60" cy="42" r="2" fill="#2563eb"/>
+                <circle cx="50" cy="48" r="1.5" fill="#2563eb"/>
+                <!-- Tech/connection lines -->
+                <path d="M35 65 L45 60 L55 65 L65 60" stroke="#ffffff" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+        
+        <!-- Main content -->
+        <h1>Welcome to Th1nkN3st</h1>
+        <p class="subtitle">Smart Tools & Tech Insights</p>
+        
+        <div class="content">
+            <p class="description">
+                We share curated tools, gadgets, and insights that make technology simpler and smarter.
+            </p>
+            
+            <p class="description">
+                Follow our recommendations and explore practical DevSecOps tips and automation tricks.
+            </p>
+            
+            <div class="coming-soon">
+                Coming soon: reviews, guides, and affiliate finds to make your tech life easier.
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2025 Th1nkN3st • <a href="mailto:devsecopstips@gmail.com">devsecopstips@gmail.com</a></p>
+        </footer>
+    </main>
+</body>
+</html>

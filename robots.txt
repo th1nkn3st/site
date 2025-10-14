@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap location (optional)
+Sitemap: https://th1nkn3st.com/sitemap.xml
