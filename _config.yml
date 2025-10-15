@@ -61,12 +61,12 @@ defaults:
       path: ""
       type: "tools"
     values:
-      layout: "page"
+      layout: "default"
   - scope:
       path: ""
       type: "gear"
     values:
-      layout: "page"
+      layout: "default"
 
 # Exclude files from processing
 exclude:
