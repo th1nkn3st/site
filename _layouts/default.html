@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/custom.css?v=2' | relative_url }}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/homepage.css?v=4' | relative_url }}">
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/logo.svg' | relative_url }}">
+
+    {% seo %}
+    {% feed_meta %}
+</head>
+
+<body>
+
+    <!-- NAVIGATION HEADER (matching index.html style) -->
+    <nav class="site-header">
+        <div class="nav-container">
+            <a href="{{ '/' | relative_url }}" class="nav-brand">
+                <img src="{{ '/assets/logo.svg' | relative_url }}" alt="{{ site.title }} Logo" class="nav-logo">
+                <span class="nav-title">{{ site.title }}</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a></li>
+                <li><a href="{{ '/blog/' | relative_url }}" class="nav-link {% if page.url contains '/blog' %}active{% endif %}">Blog</a></li>
+                <li><a href="{{ '/tools/' | relative_url }}" class="nav-link {% if page.url contains '/tools' %}active{% endif %}">Tools</a></li>
+                <li><a href="{{ '/gear/' | relative_url }}" class="nav-link {% if page.url contains '/gear' %}active{% endif %}">Gear</a></li>
+                <li><a href="{{ '/contact/' | relative_url }}" class="nav-link {% if page.url contains '/contact' %}active{% endif %}">Contact</a></li>
+            </ul>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="content-wrapper">
+            {{ content }}
+        </div>
+    </main>
+
+    <!-- FOOTER (matching index.html style) -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-heading">Connect With Us</h3>
+                    <div class="footer-links">
+                        <a href="https://twitter.com/th1nkn3st" target="_blank" rel="noopener noreferrer">Twitter</a>
+                        <a href="https://linkedin.com/company/th1nkn3st" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://pinterest.com/th1nkn3st" target="_blank" rel="noopener noreferrer">Pinterest</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Subscribe</h3>
+                    <div class="footer-links">
+                        <a href="{{ '/feed.xml' | relative_url }}">RSS Feed</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact</h3>
+                    <p class="footer-text">
+                        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">© {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+            </div>
+            
+            <div class="affiliate-disclosure">
+                <p><strong>Affiliate Disclosure:</strong> As an Amazon Associate, Th1nkN3st earns from qualifying purchases (Store ID: th1nkn3st-20). We may earn commissions when you use our affiliate links.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

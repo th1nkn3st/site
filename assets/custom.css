@@ -1,0 +1,386 @@
+/* ==========================================================================
+   Th1nkN3st Custom Styles - Override Theme
+   ========================================================================== */
+
+/* Reset Jekyll Theme */
+#header_wrap {
+  display: none !important;
+}
+
+#footer_wrap {
+  display: none !important;
+}
+
+#main_content_wrap {
+  background: #1a1a1a !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#main_content {
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Color Variables */
+:root {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --bg-accent: #2d2d2d;
+  --text-primary: #e6e6e6;
+  --text-secondary: #b3b3b3;
+  --text-muted: #808080;
+  --accent-primary: #6abd45;
+  --accent-secondary: #8ec640;
+  --accent-hover: #7dd155;
+  --border-primary: #404040;
+  --border-secondary: #2d2d2d;
+}
+
+/* Body */
+body {
+  background-color: #1a1a1a !important;
+  color: #e6e6e6 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', system-ui, sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Override monospace fonts everywhere */
+body, 
+.nav-title,
+.nav-link,
+.main-content,
+.content-wrapper,
+h1, h2, h3, h4, h5, h6,
+p, li, a, span, div {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', system-ui, sans-serif !important;
+}
+
+/* Navigation Header */
+.site-header,
+.header {
+  background-color: #1a1a1a !important;
+  border-bottom: 1px solid #404040 !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.nav-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 4rem !important;
+}
+
+.nav-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  text-decoration: none !important;
+  color: #e6e6e6 !important;
+  font-weight: 700 !important;
+  font-size: 1.125rem !important;
+}
+
+.nav-title {
+  color: #e6e6e6 !important;
+}
+
+.nav-brand:hover .nav-title {
+  color: #6abd45 !important;
+}
+
+/* FORCE LOGO SIZE */
+.nav-logo,
+.site-header img,
+.nav-brand img,
+img[alt*="Logo"] {
+  width: 40px !important;
+  height: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  object-fit: contain !important;
+  border-radius: 8px !important;
+  background: linear-gradient(145deg, #1e1e1e, #0a0a0a) !important;
+  border: 1px solid #333 !important;
+  padding: 2px !important;
+  display: block !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+.nav-menu {
+  display: flex !important;
+  list-style: none !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: center !important;
+}
+
+.nav-menu li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.nav-link {
+  text-decoration: none !important;
+  color: #b3b3b3 !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  transition: color 0.2s ease !important;
+  position: relative !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #6abd45 !important;
+}
+
+.nav-link.active::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -0.5rem !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 2px !important;
+  background: #6abd45 !important;
+  border-radius: 1px !important;
+  display: block !important;
+}
+
+/* Hide hamburger menu on desktop */
+.nav-toggle {
+  display: none !important;
+}
+
+/* Main Content */
+.main-content {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 2rem 1rem !important;
+  min-height: calc(100vh - 20rem) !important;
+  text-align: left !important;
+}
+
+.content-wrapper {
+  padding: 2rem 0 !important;
+  text-align: left !important;
+}
+
+/* Exception: Hero section should be centered */
+.content-wrapper .hero,
+.content-wrapper .hero *,
+.content-wrapper .hero-content,
+.content-wrapper .hero-content * {
+  text-align: center !important;
+}
+
+.content-wrapper > p,
+.main-content > p,
+.main-content p {
+  text-align: left !important;
+}
+
+/* Exception: Hero section paragraphs should be centered */
+.hero p,
+.hero-content p,
+.hero-description {
+  text-align: center !important;
+}
+
+/* Headings */
+h1 {
+  color: #6abd45 !important;
+  font-size: 2.5rem !important;
+  text-align: left !important;
+  margin-bottom: 1rem !important;
+}
+
+h2 {
+  color: #8ec640 !important;
+  font-size: 1.875rem !important;
+  margin-top: 3rem !important;
+  margin-bottom: 1.5rem !important;
+  border-bottom: 2px solid #404040 !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* Blog Posts Grid */
+.posts {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 2rem !important;
+  margin-top: 2rem !important;
+}
+
+.post {
+  background: #1a1a1a !important;
+  border: 1px solid #404040 !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.post:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(106, 189, 69, 0.1) !important;
+  border-color: #6abd45 !important;
+}
+
+.post h2 {
+  font-size: 1.5rem !important;
+  color: #e6e6e6 !important;
+  margin: 0 0 0.5rem 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.post h2 a {
+  color: #e6e6e6 !important;
+  text-decoration: none !important;
+}
+
+.post h2 a:hover {
+  color: #6abd45 !important;
+}
+
+.post time {
+  display: block !important;
+  font-size: 0.875rem !important;
+  color: #808080 !important;
+  margin-bottom: 1rem !important;
+}
+
+.post p {
+  color: #b3b3b3 !important;
+  line-height: 1.6 !important;
+}
+
+.post-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+  margin: 1rem 0 !important;
+}
+
+.tag {
+  background: #2d2d2d !important;
+  color: #6abd45 !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 6px !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  border: 1px solid #404040 !important;
+}
+
+.read-more {
+  color: #6abd45 !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+}
+
+.read-more:hover {
+  color: #7dd155 !important;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #242424 !important;
+  border-top: 1px solid #404040 !important;
+  padding: 3rem 0 2rem !important;
+  margin-top: 4rem !important;
+}
+
+.footer-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+}
+
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.footer-heading {
+  color: #6abd45 !important;
+  font-size: 1.125rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.footer-links {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+}
+
+.footer-links a {
+  color: #b3b3b3 !important;
+  text-decoration: none !important;
+  font-size: 0.875rem !important;
+}
+
+.footer-links a:hover {
+  color: #6abd45 !important;
+}
+
+.footer-bottom {
+  text-align: center !important;
+  padding-top: 2rem !important;
+  border-top: 1px solid #2d2d2d !important;
+}
+
+.footer-copyright {
+  color: #808080 !important;
+  font-size: 0.875rem !important;
+}
+
+.affiliate-disclosure {
+  background-color: #2d2d2d !important;
+  border: 1px solid #404040 !important;
+  border-radius: 6px !important;
+  padding: 1rem !important;
+  margin-top: 2rem !important;
+  font-size: 0.75rem !important;
+  color: #808080 !important;
+  text-align: center !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none !important;
+  }
+  
+  .nav-toggle {
+    display: block !important;
+  }
+  
+  .posts {
+    grid-template-columns: 1fr !important;
+  }
+}

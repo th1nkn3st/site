@@ -1,5 +1,17 @@
 User-agent: *
 Allow: /
 
-# Sitemap location (optional)
+# Disallow sensitive paths (if any exist)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+
+# Sitemap location
 Sitemap: https://th1nkn3st.com/sitemap.xml
+
+# Crawl-delay for aggressive bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

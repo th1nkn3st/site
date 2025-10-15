@@ -1,0 +1,94 @@
+# Site settings
+title: "Th1nkN3st"
+description: "Smart tools, real insights, zero hype. Curated DevSecOps tools, automation gadgets, and tech reviews for professionals."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://th1nkn3st.com" # the base hostname & protocol for your site
+
+# Author information
+author: "Th1nkN3st Team"
+email: "devsecopstips@gmail.com"
+
+# Build settings
+theme: jekyll-theme-hacker
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Minima theme settings
+minima:
+  social_links:
+    twitter: th1nkn3st
+    github: th1nkn3st
+    linkedin: company/th1nkn3st
+    rss: rss
+  
+# Navigation menu
+header_pages:
+  - blog.md
+
+# SEO and social
+twitter:
+  username: th1nkn3st
+  card: summary_large_image
+
+# Site content settings
+show_excerpts: true
+excerpt_separator: <!--more-->
+
+# Pagination (disabled for now)
+# paginate: 5
+# paginate_path: "/blog/page:num/"
+
+# Collections (for future expansion)
+collections:
+  tools:
+    output: true
+    permalink: /:collection/:name/
+  gear:
+    output: true
+    permalink: /:collection/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Th1nkN3st Team"
+  - scope:
+      path: ""
+      type: "tools"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "gear"
+    values:
+      layout: "page"
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Include files
+include:
+  - _pages
+  - .well-known
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Timezone
+timezone: America/New_York
