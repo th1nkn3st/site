@@ -42,7 +42,9 @@ updates:
     # Allow version updates for security patches
     allow:
       - dependency-type: "all"
-    # Ignore major version updates for Jekyll (GitHub Pages pins to 3.9.x)
+    # Ignore major and minor version updates for Jekyll (GitHub Pages pins to 3.9.x)
     ignore:
       - dependency-name: "jekyll"
-        update-types: ["version-update:semver-major"]
+        update-types: 
+          - "version-update:semver-major"
+          - "version-update:semver-minor"
