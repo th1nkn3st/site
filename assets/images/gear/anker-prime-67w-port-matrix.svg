@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="640" height="360" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="matrix-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#11161f"/>
+      <stop offset="100%" stop-color="#0d131b"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="640" height="360" fill="url(#matrix-bg)"/>
+  <text x="40" y="60" fill="#8ec640" font-family="Inter, Helvetica, Arial, sans-serif" font-size="24">Output Matrix</text>
+  <text x="40" y="95" fill="#8ca3c7" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">Understand the dynamic power allocation across ports.</text>
+  <g transform="translate(40 120)">
+    <rect x="0" y="0" width="560" height="40" fill="#1f2530" stroke="#2e3544" stroke-width="1"/>
+    <text x="20" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">Mode</text>
+    <text x="220" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">USB-C 1</text>
+    <text x="320" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">USB-C 2</text>
+    <text x="420" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">USB-A</text>
+  </g>
+  <g transform="translate(40 160)">
+    <rect x="0" y="0" width="560" height="40" fill="#151a24" stroke="#2e3544" stroke-width="1"/>
+    <text x="20" y="26" fill="#7dd155" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">Single Port</text>
+    <text x="220" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">100W</text>
+    <text x="320" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">100W</text>
+    <text x="420" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">22.5W</text>
+  </g>
+  <g transform="translate(40 200)">
+    <rect x="0" y="0" width="560" height="40" fill="#1f2530" stroke="#2e3544" stroke-width="1"/>
+    <text x="20" y="26" fill="#66b2ff" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">Dual Port</text>
+    <text x="220" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">60W</text>
+    <text x="320" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">40W</text>
+    <text x="420" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">18W</text>
+  </g>
+  <g transform="translate(40 240)">
+    <rect x="0" y="0" width="560" height="40" fill="#151a24" stroke="#2e3544" stroke-width="1"/>
+    <text x="20" y="26" fill="#ffb74d" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">Triple Port</text>
+    <text x="220" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">45W</text>
+    <text x="320" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">30W</text>
+    <text x="420" y="26" fill="#d5deeb" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16">18W</text>
+  </g>
+  <text x="40" y="320" fill="#5f6f85" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14">Data based on Anker model A2145 (ActiveShield™ 2.0). Values represent maximum output per port when used in each mode.</text>
+</svg>
