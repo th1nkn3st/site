@@ -35,7 +35,7 @@ images:
       <div class="carousel-slides" id="carouselSlides">
         {% for img in page.images %}
         <div class="carousel-slide">
-          <img src="{{ img }}" alt="{{ page.title }}" loading="lazy">
+          <img src="{{ img }}" alt="Product image" loading="lazy">
         </div>
         {% endfor %}
       </div>
