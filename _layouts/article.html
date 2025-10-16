@@ -1,0 +1,88 @@
+---
+layout: default
+---
+
+<article class="article-layout">
+  <!-- Breadcrumb Navigation -->
+  <nav class="article-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">← Home</a>
+    {% if page.collection == 'gaming' %}
+    <a href="/gaming/">Gaming</a>
+    {% elsif page.collection == 'geek' %}
+    <a href="/geek/">Geek Culture</a>
+    {% elsif page.collection == 'diy' %}
+    <a href="/diy/">DIY</a>
+    {% endif %}
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <h1 class="article-title">{{ page.title }}</h1>
+    
+    <div class="article-meta">
+      {% if page.date %}
+      <time datetime="{{ page.date | date_to_xmlschema }}" class="article-date">
+        {{ page.date | date: "%B %d, %Y" }}
+      </time>
+      {% endif %}
+      
+      {% if page.author %}
+      <span class="article-author">by {{ page.author }}</span>
+      {% endif %}
+    </div>
+
+    {% if page.tags %}
+    <div class="article-tags">
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <!-- Cover Image -->
+  {% if page.cover %}
+  <figure class="article-cover">
+    <img src="{{ page.cover }}" alt="{{ page.title }}" loading="lazy">
+    {% if page.cover_caption %}
+    <figcaption>{{ page.cover_caption }}</figcaption>
+    {% endif %}
+  </figure>
+  {% endif %}
+
+  <!-- Article Content -->
+  <div class="article-content">
+    {{ content }}
+  </div>
+
+  <!-- Image Gallery (if images provided, max 3) -->
+  {% if page.images and page.images.size > 0 %}
+  <section class="article-gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      {% for image in page.images limit:3 %}
+      <figure class="gallery-item">
+        <img src="{{ image }}" alt="{{ page.title }}" loading="lazy">
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Article Footer -->
+  <footer class="article-footer">
+    {% if page.categories %}
+    <div class="article-categories">
+      <strong>Categories:</strong>
+      {% for category in page.categories %}
+      <a href="/categories/#{{ category | slugify }}" class="category-link">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <nav class="article-navigation">
+      <a href="{% if page.collection == 'gaming' %}/gaming/{% elsif page.collection == 'geek' %}/geek/{% elsif page.collection == 'diy' %}/diy/{% else %}/blog/{% endif %}" class="nav-back">← Back to {{ page.collection | capitalize | default: "Blog" }}</a>
+      <a href="/" class="nav-home">Home</a>
+    </nav>
+  </footer>
+</article>

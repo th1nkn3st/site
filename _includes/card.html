@@ -1,0 +1,87 @@
+{% comment %}
+  Generic card component for all content types
+  
+  Parameters:
+  - item: The content item object (required)
+  - type: Card type - "article" (default), "gear", "tool"
+  - show_date: Show date (default: true for articles)
+  - show_excerpt: Show excerpt (default: true)
+  - show_tags: Show tags (default: false)
+{% endcomment %}
+
+{% assign card_type = include.type | default: "article" %}
+{% assign show_date = include.show_date | default: true %}
+{% assign show_excerpt = include.show_excerpt | default: true %}
+{% assign show_tags = include.show_tags | default: false %}
+
+{% if include.item %}
+  {% assign item = include.item %}
+  
+  <article class="content-card {% if card_type %}content-card--{{ card_type }}{% endif %}">
+    {% comment %} Card Image {% endcomment %}
+    {% if item.cover %}
+      {% assign card_image = item.cover %}
+    {% elsif item.images and item.images.size > 0 %}
+      {% assign card_image = item.images[0] %}
+    {% else %}
+      {% assign card_image = nil %}
+    {% endif %}
+    
+    {% if card_image %}
+    <a href="{{ item.url | relative_url }}" class="card-image-link">
+      <div class="card-image">
+        <img src="{{ card_image }}" alt="{{ item.title | replace: '"', '' | escape }}" loading="lazy">
+      </div>
+    </a>
+    {% endif %}
+    
+    <div class="card-content">
+      {% comment %} Card Title {% endcomment %}
+      <h3 class="card-title">
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      </h3>
+      
+      {% comment %} Card Meta (Date, Brand, Author) {% endcomment %}
+      {% if show_date and item.date or item.brand %}
+      <div class="card-meta">
+        {% if show_date and item.date %}
+        <time datetime="{{ item.date | date_to_xmlschema }}" class="card-date">
+          {{ item.date | date: "%b %d, %Y" }}
+        </time>
+        {% endif %}
+        
+        {% if item.brand %}
+        <span class="card-brand">{{ item.brand }}</span>
+        {% endif %}
+      </div>
+      {% endif %}
+      
+      {% comment %} Card Excerpt {% endcomment %}
+      {% if show_excerpt and item.excerpt %}
+      <p class="card-excerpt">
+        {{ item.excerpt | strip_html | truncatewords: 25 }}
+      </p>
+      {% endif %}
+      
+      {% comment %} Card Tags {% endcomment %}
+      {% if show_tags and item.tags and item.tags.size > 0 %}
+      <div class="card-tags">
+        {% for tag in item.tags limit:3 %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      
+      {% comment %} Card CTA {% endcomment %}
+      <a href="{{ item.url | relative_url }}" class="card-cta">
+        {% if card_type == "gear" %}
+          View Details →
+        {% elsif card_type == "tool" %}
+          Explore →
+        {% else %}
+          Read More →
+        {% endif %}
+      </a>
+    </div>
+  </article>
+{% endif %}

@@ -1,0 +1,211 @@
+---
+layout: default
+---
+
+<article class="gear-product">
+  <div class="gear-breadcrumb">
+    <a href="/gear/">← Back to Gear</a>
+    {% if page.affiliate_short_url %}
+    <a href="{{ page.affiliate_short_url }}" class="shop-now-link" target="_blank" rel="nofollow sponsored noopener">Shop Now →</a>
+    {% endif %}
+  </div>
+
+  <h1 class="product-title">{{ page.title }}</h1>
+
+  <div class="product-hero">
+    <div class="product-info">
+      {% if page.hero_description %}
+      <p class="hero-description">{{ page.hero_description }}</p>
+      {% endif %}
+      
+      {% if page.key_features %}
+      <h3>Key Features</h3>
+      <ul>
+        {% for feature in page.key_features %}
+        <li>{{ feature }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+
+    {% if page.images %}
+    <div class="product-gallery">
+      <div class="carousel-container">
+        <div class="carousel-slides" id="carouselSlides">
+          {% for img in page.images %}
+          <div class="carousel-slide">
+            <img src="{{ img }}" alt="{{ page.title | replace: '"', '' }}" loading="lazy">
+          </div>
+          {% endfor %}
+        </div>
+        <button class="carousel-btn prev" onclick="window.gearCarousel.moveSlide(-1)" aria-label="Previous image">‹</button>
+        <button class="carousel-btn next" onclick="window.gearCarousel.moveSlide(1)" aria-label="Next image">›</button>
+      </div>
+      <div class="carousel-thumbnails" id="carouselThumbnails"></div>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="product-content">
+    {% if page.technical_specs %}
+    <section class="product-section">
+      <h2>Technical Specs</h2>
+      <table class="specs-table">
+        <tbody>
+          {% for spec in page.technical_specs %}
+          <tr>
+            <th>{{ spec.label }}</th>
+            <td>{{ spec.value }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+    {% endif %}
+
+    {% if page.power_allocation %}
+    <section class="product-section">
+      <h2>Power Allocation</h2>
+      <table class="power-table">
+        <thead>
+          <tr>
+            <th>Mode</th>
+            <th>Port 1</th>
+            <th>Port 2</th>
+            <th>Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in page.power_allocation %}
+          <tr>
+            <td><strong>{{ row.mode }}</strong></td>
+            <td>{{ row.port_1 }}</td>
+            <td>{{ row.port_2 }}</td>
+            <td>{{ row.use_case }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+    {% endif %}
+
+    {% if page.setup_steps or page.tips %}
+    <section class="product-section">
+      <h2>Setup Guide</h2>
+      
+      {% if page.setup_steps %}
+      <h3>Installation</h3>
+      <ol>
+        {% for step in page.setup_steps %}
+        <li>{{ step }}</li>
+        {% endfor %}
+      </ol>
+      {% endif %}
+
+      {% if page.tips %}
+      <h3>Tips</h3>
+      <ul>
+        {% for tip in page.tips %}
+        <li>{{ tip }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </section>
+    {% endif %}
+
+    {% if page.compatible_devices %}
+    <section class="product-section">
+      <h2>Compatible Devices</h2>
+      {% for device_group in page.compatible_devices %}
+      <p><strong>{{ device_group.heading }}:</strong> {{ device_group.list }}</p>
+      {% endfor %}
+    </section>
+    {% endif %}
+
+    {% if page.sections %}
+    {% for section in page.sections %}
+    <section class="product-section">
+      <h2>{{ section.title }}</h2>
+      {{ section.content | markdownify }}
+    </section>
+    {% endfor %}
+    {% endif %}
+
+    {% if content and content != '' %}
+    <section class="product-section">
+      {{ content }}
+    </section>
+    {% endif %}
+
+    <section class="product-section product-purchase">
+      <h2>Purchase</h2>
+      {% if page.affiliate_short_url %}
+      <a href="{{ page.affiliate_short_url }}" class="read-more" target="_blank" rel="nofollow sponsored noopener">Buy on Amazon →</a>
+      <p class="affiliate-disclosure">
+        <small>As an Amazon Associate, Th1nkN3st earns from qualifying purchases. Using our links supports our reviews—thank you!</small>
+      </p>
+      {% endif %}
+    </section>
+
+    <section class="product-section">
+      <h2>Related Items</h2>
+      <ul class="related-links">
+        <li><a href="/gear/">Browse All Gear</a></li>
+        <li><a href="/tools/">DevSecOps Tools</a></li>
+        <li><a href="/blog/">Latest Blog Posts</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="gear-breadcrumb">
+    <a href="/gear/">← Back to Gear</a>
+    <a href="/tools/">Tools Library</a>
+    <a href="/">Home</a>
+  </div>
+</article>
+
+<script>
+(function() {
+  if (typeof window.gearCarousel !== 'undefined') return;
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    if (slides.length === 0) return;
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    const slidesContainer = document.getElementById('carouselSlides');
+    const thumbnailsContainer = document.getElementById('carouselThumbnails');
+
+    slides.forEach((slide, index) => {
+      const thumb = document.createElement('div');
+      thumb.className = 'carousel-thumbnail';
+      thumb.onclick = () => window.gearCarousel.goToSlide(index);
+      const img = slide.querySelector('img').cloneNode(true);
+      thumb.appendChild(img);
+      thumbnailsContainer.appendChild(thumb);
+    });
+
+    function updateCarousel() {
+      slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+      document.querySelectorAll('.carousel-thumbnail').forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    window.gearCarousel = {
+      moveSlide: function(direction) {
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        updateCarousel();
+      },
+      goToSlide: function(index) {
+        currentSlide = index;
+        updateCarousel();
+      }
+    };
+
+    updateCarousel();
+    setInterval(() => window.gearCarousel.moveSlide(1), 5000);
+  });
+})();
+</script>

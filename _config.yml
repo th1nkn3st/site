@@ -1,12 +1,20 @@
 # Site settings
 title: "Th1nkN3st"
-description: "Smart tools, real insights, zero hype. Curated DevSecOps tools, automation gadgets, and tech reviews for professionals."
+description: "Smart tech, gaming, geek picks, DIY, and DevSecOps. Real insights, curated gear, and honest reviews for tech enthusiasts and professionals."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://th1nkn3st.com" # the base hostname & protocol for your site
 
 # Author information
 author: "Th1nkN3st Team"
 email: "devsecopstips@gmail.com"
+
+# Social media handles
+social:
+  twitter: th1nkn3st
+  pinterest: th1nkn3st
+  instagram: th1nkn3st
+  tiktok: th1nkn3st
+  linkedin: company/th1nkn3st
 
 # Build settings
 theme: jekyll-theme-hacker
@@ -40,7 +48,7 @@ excerpt_separator: <!--more-->
 # paginate: 5
 # paginate_path: "/blog/page:num/"
 
-# Collections (for future expansion)
+# Collections
 collections:
   tools:
     output: true
@@ -48,6 +56,15 @@ collections:
   gear:
     output: true
     permalink: /:collection/:name/
+  gaming:
+    output: true
+    permalink: /gaming/:slug/
+  geek:
+    output: true
+    permalink: /geek/:slug/
+  diy:
+    output: true
+    permalink: /diy/:slug/
 
 # Default front matter
 defaults:
@@ -66,7 +83,25 @@ defaults:
       path: ""
       type: "gear"
     values:
-      layout: "default"
+      layout: "gear"
+  - scope:
+      path: ""
+      type: "gaming"
+    values:
+      layout: "article"
+      author: "Th1nkN3st Team"
+  - scope:
+      path: ""
+      type: "geek"
+    values:
+      layout: "article"
+      author: "Th1nkN3st Team"
+  - scope:
+      path: ""
+      type: "diy"
+    values:
+      layout: "article"
+      author: "Th1nkN3st Team"
 
 # Exclude files from processing
 exclude:

@@ -8,77 +8,81 @@ title: Home
         <img src="{{ '/assets/logo.svg' | relative_url }}" alt="Th1nkN3st Logo" class="hero-logo">
         
         <h1 class="hero-title">Welcome to Th1nkN3st</h1>
-        <p class="hero-tagline">Smart Tools • Real Insights • Zero Hype</p>
+        <p class="hero-tagline">Smart Tech • Gaming • Geek Culture • DIY • DevSecOps</p>
         
         <p class="hero-description">
-            We curate the best DevSecOps tools, automation gadgets, and tech insights that make your workflow smarter and more secure. Professional recommendations you can trust.
+            Your hub for curated tech reviews, gaming gear, geek culture, DIY projects, and DevSecOps tools. Real insights from enthusiasts, zero marketing fluff.
         </p>
-        
-        <div class="coming-soon-badge">
-            🚀 Coming soon: In-depth reviews, guides, and curated finds
-        </div>
     </div>
 </section>
 
-<section class="featured-articles">
+{% comment %} Latest Posts Section - Mix of posts, gaming, geek, diy {% endcomment %}
+{% assign all_posts = site.posts | concat: site.gaming | concat: site.geek | concat: site.diy | sort: 'date' | reverse %}
+
+<section class="homepage-section">
     <div class="section-header">
-        <h2 class="section-title">Featured Articles</h2>
-        <p class="section-subtitle">Latest insights on DevSecOps tools, automation techniques, and productivity gear</p>
+        <h2 class="section-title">Latest Posts</h2>
+        <p class="section-subtitle">Fresh content across gaming, geek culture, DIY, and DevSecOps</p>
     </div>
     
-    <div class="articles-grid">
-        {% for post in site.posts limit:3 %}
-        <article class="article-card">
-            {% if post.tags.first %}
-            <span class="article-tag">{{ post.tags.first }}</span>
-            {% endif %}
-            <h3 class="article-title">
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </h3>
-            {% if post.excerpt %}
-            <p class="article-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-            {% endif %}
-            <div class="article-meta">
-                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-            </div>
-        </article>
+    {% if all_posts.size > 0 %}
+    <div class="content-grid">
+        {% for item in all_posts limit:6 %}
+          {% include card.html item=item type="article" show_date=true %}
         {% endfor %}
-        
-        {% if site.posts.size == 0 %}
-        <article class="article-card">
-            <span class="article-tag">DEVSECOPS</span>
-            <h3 class="article-title">Essential Security Tools for Modern Tech</h3>
-            <p class="article-excerpt placeholder-text">Coming soon: Curated list of essential security tools...</p>
-            <div class="article-meta">Coming Soon</div>
-        </article>
-        
-        <article class="article-card">
-            <span class="article-tag">AUTOMATION</span>
-            <h3 class="article-title">Infrastructure as Code: Best Tools</h3>
-            <p class="article-excerpt placeholder-text">Coming soon: Comprehensive guide to IaC tools...</p>
-            <div class="article-meta">Coming Soon</div>
-        </article>
-        
-        <article class="article-card">
-            <span class="article-tag">GEAR REVIEW</span>
-            <h3 class="article-title">Smart Home Gadgets for Tech Professionals</h3>
-            <p class="article-excerpt placeholder-text">Coming soon: Reviews of productivity-enhancing gear...</p>
-            <div class="article-meta">Coming Soon</div>
-        </article>
-        {% endif %}
     </div>
-    
-    <div style="text-align: center; margin-top: 2rem;">
-        <a href="{{ '/blog/' | relative_url }}" class="read-more" style="font-size: 1.125rem;">View All Articles →</a>
+    <div class="section-cta">
+        <a href="{{ '/blog/' | relative_url }}" class="btn-primary">View All Posts →</a>
     </div>
+    {% else %}
+    <p class="empty-state"><em>Content coming soon! Check back for reviews, guides, and insights.</em></p>
+    {% endif %}
 </section>
 
-<section class="disclosure">
-    <h3 class="disclosure-title">Affiliate Disclosure</h3>
-    <p class="disclosure-text">
-        <strong>Amazon Associates:</strong> As an Amazon Associate, Th1nkN3st earns from qualifying purchases (Store ID: th1nkn3st-20). We may earn commissions when you use our affiliate links.
-    </p>
-    <p class="disclosure-text">
-        We only recommend products and services we genuinely believe in. Our reviews are honest and unbiased, regardless of affiliate relationships.
-    </p>
+{% comment %} Trending Gear Section {% endcomment %}
+{% assign gear_items = site.gear | where_exp: "item", "item.slug != '_TEMPLATE'" | sort: 'title' %}
+
+<section class="homepage-section">
+    <div class="section-header">
+        <h2 class="section-title">Trending Gear</h2>
+        <p class="section-subtitle">Curated tech gear and gadgets we actually use</p>
+    </div>
+    
+    {% if gear_items.size > 0 %}
+    <div class="content-grid">
+        {% for item in gear_items limit:6 %}
+          {% include card.html item=item type="gear" show_date=false %}
+        {% endfor %}
+    </div>
+    <div class="section-cta">
+        <a href="{{ '/gear/' | relative_url }}" class="btn-primary">Browse All Gear →</a>
+    </div>
+    {% else %}
+    <p class="empty-state"><em>Gear reviews coming soon! Stay tuned for our top recommendations.</em></p>
+    {% endif %}
 </section>
+
+{% comment %} From the Labs Section - DIY Projects {% endcomment %}
+{% assign diy_items = site.diy | sort: 'date' | reverse %}
+
+<section class="homepage-section">
+    <div class="section-header">
+        <h2 class="section-title">From the Labs</h2>
+        <p class="section-subtitle">Hands-on DIY projects and maker experiments</p>
+    </div>
+    
+    {% if diy_items.size > 0 %}
+    <div class="content-grid">
+        {% for item in diy_items limit:6 %}
+          {% include card.html item=item type="article" show_date=true %}
+        {% endfor %}
+    </div>
+    <div class="section-cta">
+        <a href="{{ '/diy/' | relative_url }}" class="btn-primary">View All DIY Projects →</a>
+    </div>
+    {% else %}
+    <p class="empty-state"><em>DIY projects in the works! Check back for build guides and maker content.</em></p>
+    {% endif %}
+</section>
+
+
