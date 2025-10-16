@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "slug": "anker67",
+      "affiliate_link": "https://amzn.to/4qhzGlu",
+      "product_name": "Anker Prime 67W"
+    },
+    {
+      "slug": "logitechg305",
+      "affiliate_link": "https://amzn.to/47b37wC",
+      "product_name": "Logitech G305"
+    },
+    {
+      "slug": "samsungg9",
+      "affiliate_link": "https://amzn.to/477v8VR",
+      "product_name": "Samsung Odyssey G9"
+    }
+  ]
+}
