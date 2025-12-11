@@ -74,3 +74,6 @@ _config_dev.yml
 
 # Internal documentation directory (sensitive - do not commit)
 internal-docs/
+
+# n8n tools (lives on n8n server, not in repo)
+n8n_tools/

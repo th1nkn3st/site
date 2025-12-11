@@ -9,12 +9,14 @@ author: "Th1nkN3st Team"
 email: "devsecopstips@gmail.com"
 
 # Social media handles
+# Commented out until accounts are created
+# social:
+#   twitter: th1nkn3st
+#   pinterest: th1nkn3st
+#   instagram: th1nkn3st
+#   tiktok: th1nkn3st
+#   linkedin: company/th1nkn3st
 social:
-  twitter: th1nkn3st
-  pinterest: th1nkn3st
-  instagram: th1nkn3st
-  tiktok: th1nkn3st
-  linkedin: company/th1nkn3st
 
 # Build settings
 theme: jekyll-theme-hacker
@@ -74,6 +76,7 @@ defaults:
     values:
       layout: "post"
       author: "Th1nkN3st Team"
+      author_avatar: "/assets/images/author/avatar.png"
   - scope:
       path: ""
       type: "tools"
@@ -113,6 +116,7 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - n8n_tools/
 
 # Include files
 include:

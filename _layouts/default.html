@@ -133,6 +133,7 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-grid">
+                {% if site.social.pinterest or site.social.twitter or site.social.instagram or site.social.tiktok or site.social.linkedin %}
                 <div class="footer-column">
                     <h3 class="footer-heading">Connect With Us</h3>
                     <div class="footer-links">
@@ -153,6 +154,7 @@
                         {% endif %}
                     </div>
                 </div>
+                {% endif %}
                 
                 <div class="footer-column">
                     <h3 class="footer-heading">Subscribe</h3>
