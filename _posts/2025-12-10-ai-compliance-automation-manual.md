@@ -13,7 +13,7 @@ author_link: "https://www.linkedin.com/in/william-j-saraiva-52093b51"
 seo_author: "William J. Saraiva"
 seo_type: "article"
 seo_profile: "https://www.linkedin.com/in/william-j-saraiva-52093b51"
-og_image: "/assets/images/posts/A1/hero.png"
+image: "/assets/images/posts/A1/hero.png"
 schema_author:
   "@type": "Person"
   "name": "William J. Saraiva"
@@ -24,7 +24,13 @@ schema_author:
 
 # AI for Compliance: Solving the Real Problem — Manual Evidence
 
-![Hero Graphic](/assets/images/posts/A1/hero.png)
+<div class="thinknest-graph-wrapper">
+  <div class="thinknest-graph-frame">
+    <img src="/assets/images/posts/A1/hero.png" alt="Hero Graphic">
+  </div>
+</div>
+
+<div class="thinknest-divider"></div>
 
 Compliance is rarely a technology problem—it's a **manual evidence** problem.
 
@@ -62,7 +68,16 @@ What they _hate_ is proving they fixed them.
 
 This is where AI finally changes the game.
 
-![Why Compliance Is Manual](/assets/images/posts/A1/A1-G1.png)
+<div class="thinknest-graph-wrapper">
+  <div class="graph-title">
+    Why Compliance Is Manual
+  </div>
+  <div class="thinknest-graph-frame">
+    <img src="/assets/images/posts/A1/A1-G1.png" alt="Why Compliance Is Manual">
+  </div>
+</div>
+
+<div class="thinknest-divider"></div>
 
 ---
 
@@ -70,7 +85,16 @@ This is where AI finally changes the game.
 
 AI isn't magic—it's a force multiplier that removes friction across the entire compliance lifecycle.
 
-![AI in Compliance Pipelines](/assets/images/posts/A1/A1-G2.png)
+<div class="thinknest-graph-wrapper">
+  <div class="graph-title">
+    AI in Compliance Pipelines
+  </div>
+  <div class="thinknest-graph-frame">
+    <img src="/assets/images/posts/A1/A1-G2.png" alt="AI in Compliance Pipelines">
+  </div>
+</div>
+
+<div class="thinknest-divider"></div>
 
 ### 1. Automated Parsing of Control Requirements
 
@@ -86,7 +110,16 @@ into structured, machine-friendly checks:
 
 This is especially powerful for **DoD STIGs**, where "check" text is dense, inconsistent, and difficult to interpret manually.
 
-![Parsing Requirements](/assets/images/posts/A1/A1-G3.png)
+<div class="thinknest-graph-wrapper">
+  <div class="graph-title">
+    Parsing Requirements
+  </div>
+  <div class="thinknest-graph-frame">
+    <img src="/assets/images/posts/A1/A1-G3.png" alt="Parsing Requirements">
+  </div>
+</div>
+
+<div class="thinknest-divider"></div>
 
 ---
 
@@ -104,7 +137,16 @@ AI can analyze:
 
 This eliminates hours of human cross-referencing and reduces interpretive errors.
 
-![Config → Controls Mapping](/assets/images/posts/A1/A1-G4.png)
+<div class="thinknest-graph-wrapper">
+  <div class="graph-title">
+    Config → Controls Mapping
+  </div>
+  <div class="thinknest-graph-frame">
+    <img src="/assets/images/posts/A1/A1-G4.png" alt="Config → Controls Mapping">
+  </div>
+</div>
+
+<div class="thinknest-divider"></div>
 
 ---
 
@@ -119,7 +161,16 @@ STIGs are notoriously painful. AI helps by:
 
 Your own STIG automation work is a perfect example of this impact in practice.
 
-![STIG Interpretation](/assets/images/posts/A1/A1-G5.png)
+<div class="thinknest-graph-wrapper">
+  <div class="graph-title">
+    STIG Interpretation
+  </div>
+  <div class="thinknest-graph-frame">
+    <img src="/assets/images/posts/A1/A1-G5.png" alt="STIG Interpretation">
+  </div>
+</div>
+
+<div class="thinknest-divider"></div>
 
 ---
 
@@ -136,7 +187,16 @@ AI enables:
 
 This becomes the foundation for **continuous compliance**.
 
-![Predictive Compliance](/assets/images/posts/A1/A1-G6.png)
+<div class="thinknest-graph-wrapper">
+  <div class="graph-title">
+    Predictive Compliance
+  </div>
+  <div class="thinknest-graph-frame">
+    <img src="/assets/images/posts/A1/A1-G6.png" alt="Predictive Compliance">
+  </div>
+</div>
+
+<div class="thinknest-divider"></div>
 
 ---
 
@@ -179,7 +239,16 @@ With today's AI tooling:
 
 This is compliance treated as a _data problem_, not a documentation exercise.
 
-![Weeks → Hours Example](/assets/images/posts/A1/A1-G7.png)
+<div class="thinknest-graph-wrapper">
+  <div class="graph-title">
+    Weeks → Hours Example
+  </div>
+  <div class="thinknest-graph-frame">
+    <img src="/assets/images/posts/A1/A1-G7.png" alt="Weeks → Hours Example">
+  </div>
+</div>
+
+<div class="thinknest-divider"></div>
 
 ---
 
@@ -188,7 +257,16 @@ This is compliance treated as a _data problem_, not a documentation exercise.
 DevSecOps made security proactive.  
 AI makes it intelligent.
 
-![AI + DevSecOps](/assets/images/posts/A1/A1-G8.png)
+<div class="thinknest-graph-wrapper">
+  <div class="graph-title">
+    AI + DevSecOps
+  </div>
+  <div class="thinknest-graph-frame">
+    <img src="/assets/images/posts/A1/A1-G8.png" alt="AI + DevSecOps">
+  </div>
+</div>
+
+<div class="thinknest-divider"></div>
 
 ### 1. Policy-as-Code Enhanced by AI
 
@@ -249,7 +327,16 @@ Humans validate it.
 
 ## The Future of Compliance: 3–5 Years Out
 
-![Future Compliance](/assets/images/posts/A1/A1-G9.png)
+<div class="thinknest-graph-wrapper">
+  <div class="graph-title">
+    Future Compliance
+  </div>
+  <div class="thinknest-graph-frame">
+    <img src="/assets/images/posts/A1/A1-G9.png" alt="Future Compliance">
+  </div>
+</div>
+
+<div class="thinknest-divider"></div>
 
 We're heading toward:
 
@@ -272,7 +359,7 @@ AI won't replace auditors—it will guide them, offering context and clarity ins
 ---
 
 > 💬 **Enjoying this article? Follow me on LinkedIn for more DevSecOps, automation, and AI-in-compliance insights:**  
-> **https://www.linkedin.com/in/william-j-saraiva-52093b51**
+> **[https://www.linkedin.com/in/william-j-saraiva-52093b51](https://www.linkedin.com/in/william-j-saraiva-52093b51)**
 
 ## Conclusion
 
@@ -297,6 +384,8 @@ If you find this work valuable, share it or follow for more content on DevSecOps
 
 ### ✍️ Author
 
+<img src="/assets/images/author/avatar.png" alt="William J. Saraiva avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 1rem; display: block;">
+
 **William J. Saraiva**  
-Senior DevSecOps Engineer & Founder Contributor @ ThinkNest  
-🔗 LinkedIn: https://www.linkedin.com/in/william-j-saraiva-52093b51
+Senior DevSecOps Engineer & Founder Contributor @ Th1nkN3st
+🔗 LinkedIn: [https://www.linkedin.com/in/william-j-saraiva-52093b51](https://www.linkedin.com/in/william-j-saraiva-52093b51)
