@@ -1,0 +1,98 @@
+---
+layout: app-base
+nav: overview
+---
+{%- assign app = site.data.apps[page.app] -%}
+{%- assign app_url = '/' | append: page.app | append: '/' -%}
+{%- assign stores = app.stores -%}
+{%- assign store_names = "" | split: "" -%}
+{%- if stores.google_play %}{% assign store_names = store_names | push: "Google Play" %}{% endif -%}
+{%- if stores.app_store %}{% assign store_names = store_names | push: "the App Store" %}{% endif -%}
+{%- if stores.steam %}{% assign store_names = store_names | push: "Steam" %}{% endif -%}
+{%- if stores.itch %}{% assign store_names = store_names | push: "itch.io" %}{% endif -%}
+{%- assign body = content | strip -%}
+{%- if app.privacy.collected.size > 0 or app.privacy.third_parties.size > 0 %}{% assign collects_data = true %}{% else %}{% assign collects_data = false %}{% endif %}
+
+{% if app.hero %}
+<img class="app-hero" src="{{ app.hero.image | relative_url }}" alt="{{ app.hero.alt | escape }}"{% if app.hero.width %} width="{{ app.hero.width }}" height="{{ app.hero.height }}"{% endif %}>
+{% endif %}
+
+<div class="app-intro">
+    {%- if app.icon and app.hero == nil %}
+    <img src="{{ app.icon | relative_url }}" alt="" width="96" height="96">
+    {%- endif %}
+    <div>
+        <h1>{{ app.name }}</h1>
+        {%- if app.tagline %}
+        <p class="app-tagline">{{ app.tagline }}</p>
+        {%- endif %}
+        <p class="app-meta">
+            <span class="app-badge" data-status="{{ app.status }}">{{ app.status }}</span>
+            <span>{{ app.kind }}{% if app.platforms %} · {{ app.platforms }}{% endif %}</span>
+        </p>
+    </div>
+</div>
+
+{% if body == "" %}
+<p>{{ app.summary }}</p>
+{% else %}
+{{ content }}
+{% endif %}
+
+{% if app.screenshots %}
+<div class="app-shots">
+    {%- for shot in app.screenshots %}
+    <img src="{{ shot.src | relative_url }}" alt="{{ shot.alt | escape }}" loading="lazy">
+    {%- endfor %}
+</div>
+{% endif %}
+
+{% if app.features %}
+<h2>What's in the {{ app.category | default: 'app' }}</h2>
+<ul class="app-features">
+    {%- for feature in app.features %}
+    <li><strong>{{ feature.title }}</strong> {{ feature.text }}</li>
+    {%- endfor %}
+</ul>
+{% endif %}
+
+<h2>Get it</h2>
+{% if app.status == "Available" or app.status == "Beta" %}
+<div class="app-stores">
+    {%- if app.status == "Beta" and stores.testing %}
+    <a class="app-store" href="{{ stores.testing }}">Join the beta</a>
+    {%- endif %}
+    {%- if stores.google_play %}
+    <a class="app-store" href="https://play.google.com/store/apps/details?id={{ stores.google_play }}">Get it on Google Play</a>
+    {%- endif %}
+    {%- if stores.app_store %}
+    <a class="app-store" href="{{ stores.app_store }}">Download on the App Store</a>
+    {%- endif %}
+    {%- if stores.steam %}
+    <a class="app-store" href="{{ stores.steam }}">Get it on Steam</a>
+    {%- endif %}
+    {%- if stores.itch %}
+    <a class="app-store" href="{{ stores.itch }}">Get it on itch.io</a>
+    {%- endif %}
+    {%- if stores.web %}
+    <a class="app-store" href="{{ stores.web }}">Open in your browser</a>
+    {%- endif %}
+</div>
+{% elsif app.status == "Coming soon" and store_names.size > 0 %}
+<p>{{ app.name }} is coming soon to {{ store_names | array_to_sentence_string }}.</p>
+{% else %}
+<p>{{ app.name }} is {{ app.status | downcase }}.</p>
+{% endif %}
+
+<h2>Privacy</h2>
+<p>
+    {%- if collects_data %}
+    Read how {{ app.name }} handles your data in the <a href="{{ app_url | append: 'privacy/' | relative_url }}">privacy policy</a>.
+    {%- else %}
+    {{ app.name }} does not collect any personal data{% unless app.privacy.internet %} and works fully offline{% endunless %}.
+    Read the <a href="{{ app_url | append: 'privacy/' | relative_url }}">privacy policy</a>.
+    {%- endif %}
+</p>
+
+<h2>Support</h2>
+<p>Questions or bug reports? See <a href="{{ app_url | append: 'support/' | relative_url }}">{{ app.name }} support</a> or email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>

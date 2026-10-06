@@ -1,0 +1,9 @@
+name: 3D Print Cost Calculator
+order: 3
+category: app
+kind: Utility app
+status: In development
+platforms: To be announced
+summary: >-
+  Works out what a 3D print really costs, from filament, electricity, and
+  machine time, so you can price prints with confidence.

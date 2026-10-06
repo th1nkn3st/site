@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Th1nkN3st
-description: "Th1nkN3st is an independent maker of games and apps, including Crownlines, a strategy board game for Android."
+description: "Th1nkN3st is an independent maker of games and apps."
 ---
+{% include sorted-apps.html %}
 
 <section class="st-hero">
     <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="104" height="104">
@@ -15,11 +16,12 @@ description: "Th1nkN3st is an independent maker of games and apps, including Cro
 <section id="projects">
     <h2 class="st-section-title">Projects</h2>
     <div class="st-grid">
-        {% for project in site.data.projects %}
-        {% if project.url %}<a class="st-card" href="{{ project.url | relative_url }}">{% else %}<div class="st-card">{% endif %}
+        {% for slug in app_slugs %}
+        {% assign project = site.data.apps[slug] %}
+        {% if live_app_slugs contains slug %}<a class="st-card" href="{{ '/' | append: slug | append: '/' | relative_url }}">{% else %}<div class="st-card">{% endif %}
             <div class="st-card-head">
-                {% if project.image %}
-                <img src="{{ project.image | relative_url }}" alt="" width="56" height="56">
+                {% if project.icon %}
+                <img src="{{ project.icon | relative_url }}" alt="" width="56" height="56">
                 {% else %}
                 <span class="st-card-placeholder" aria-hidden="true">{{ project.name | slice: 0 }}</span>
                 {% endif %}
@@ -28,12 +30,12 @@ description: "Th1nkN3st is an independent maker of games and apps, including Cro
                     <p class="st-card-kind">{{ project.kind }}</p>
                 </div>
             </div>
-            <p>{{ project.blurb }}</p>
+            <p>{{ project.summary }}</p>
             <div class="st-card-meta">
                 <span class="st-badge" data-status="{{ project.status }}">{{ project.status }}</span>
                 <span>{{ project.platforms }}</span>
             </div>
-        {% if project.url %}</a>{% else %}</div>{% endif %}
+        {% if live_app_slugs contains slug %}</a>{% else %}</div>{% endif %}
         {% endfor %}
     </div>
 </section>

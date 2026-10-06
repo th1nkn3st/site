@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{%- assign app = site.data.apps[page.app] -%}
+{%- assign app_url = '/' | append: page.app | append: '/' -%}
+{%- if app.category == 'game' %}{% assign overview_label = 'Game' %}{% else %}{% assign overview_label = 'App' %}{% endif -%}
+{%- case layout.nav -%}
+{%- when 'privacy' -%}
+{%- capture page_title %}{{ app.name }} Privacy Policy{% endcapture -%}
+{%- capture page_description %}Privacy policy for {{ app.name }}: what data it uses, what stays on your device, and how to contact us.{% endcapture -%}
+{%- when 'support' -%}
+{%- capture page_title %}{{ app.name }} Support{% endcapture -%}
+{%- capture page_description %}Help, common questions, and contact details for {{ app.name }}.{% endcapture -%}
+{%- else -%}
+{%- assign page_title = app.name -%}
+{%- assign page_description = app.description | default: app.summary -%}
+{%- endcase -%}
+{%- assign share_image = app.hero.image | default: app.icon -%}
+<html lang="{{ site.lang | default: "en-US" }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>{{ page_title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page_description | strip_newlines | escape }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page_title | escape }}">
+    <meta property="og:description" content="{{ page_description | strip_newlines | escape }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    {%- if share_image %}
+    <meta property="og:image" content="{{ share_image | absolute_url }}">
+    <meta name="twitter:card" content="{% if app.hero.image %}summary_large_image{% else %}summary{% endif %}">
+    {%- endif %}
+    <link rel="icon" href="{{ app.icon | default: '/assets/logo.svg' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/app.css?v=1' | relative_url }}">
+    {%- if app.theme %}
+    <style>:root { {% for pair in app.theme %}--app-{{ pair[0] }}: {{ pair[1] }}; {% endfor %}}</style>
+    {%- endif %}
+    {%- if layout.nav == 'overview' %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": {{ app.name | jsonify }},
+        "description": {{ page_description | strip_newlines | jsonify }},
+        "applicationCategory": "{% if app.category == 'game' %}GameApplication{% else %}UtilitiesApplication{% endif %}",
+        "operatingSystem": {{ app.platforms | jsonify }},
+        {%- if app.icon %}
+        "image": {{ app.icon | absolute_url | jsonify }},
+        {%- endif %}
+        "url": {{ page.url | absolute_url | jsonify }},
+        "author": { "@type": "Organization", "name": {{ site.title | jsonify }}, "url": {{ '/' | absolute_url | jsonify }} }
+    }
+    </script>
+    {%- endif %}
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="{{ app_url | relative_url }}" class="app-brand">
+            {%- if app.icon %}
+            <img src="{{ app.icon | relative_url }}" alt="" width="40" height="40">
+            {%- endif %}
+            <span>{{ app.name }}</span>
+        </a>
+        <nav class="app-nav">
+            <a href="{{ app_url | relative_url }}" {% if layout.nav == 'overview' %}aria-current="page"{% endif %}>{{ overview_label }}</a>
+            <a href="{{ app_url | append: 'privacy/' | relative_url }}" {% if layout.nav == 'privacy' %}aria-current="page"{% endif %}>Privacy</a>
+            <a href="{{ app_url | append: 'support/' | relative_url }}" {% if layout.nav == 'support' %}aria-current="page"{% endif %}>Support</a>
+        </nav>
+    </header>
+
+    <main class="app-main">
+        {%- if app %}
+        {{ content }}
+        {%- else %}
+        <p data-app-error>No app data found for "{{ page.app }}". Add _data/apps/{{ page.app }}.yml.</p>
+        {%- endif %}
+    </main>
+
+    <footer class="app-footer">
+        <p>{{ app.name }} is made by <a href="{{ '/' | relative_url }}">{{ site.title }}</a>. Contact: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <p>© {{ 'now' | date: "%Y" }} {{ site.title }}</p>
+    </footer>
+</body>
+</html>

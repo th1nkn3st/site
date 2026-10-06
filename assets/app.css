@@ -1,0 +1,209 @@
+/* Shared styles for every app's pages. Each app overrides these colours from
+   the theme block in its _data/apps/<slug>.yml file. */
+:root {
+    --app-bg: #111318;
+    --app-panel: #191c23;
+    --app-line: #2a2f39;
+    --app-text: #e8e6e1;
+    --app-muted: #a3a7b0;
+    --app-accent: #f2b544;
+    --app-link: #3cc6b0;
+    --app-heading-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --app-body-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    background: var(--app-bg);
+    color: var(--app-text);
+    font-family: var(--app-body-font);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+a { color: var(--app-link); }
+a:hover { color: var(--app-accent); }
+
+.app-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--app-line);
+}
+
+.app-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--app-accent);
+    font-family: var(--app-heading-font);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+}
+
+.app-brand img { border-radius: 9px; }
+
+.app-nav { display: flex; gap: 1.25rem; }
+
+.app-nav a {
+    color: var(--app-muted);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.app-nav a:hover,
+.app-nav a[aria-current="page"] { color: var(--app-accent); }
+
+.app-main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+}
+
+.app-main h1,
+.app-main h2,
+.app-main h3 {
+    font-family: var(--app-heading-font);
+    color: var(--app-accent);
+    line-height: 1.25;
+}
+
+.app-main h1 { font-size: 2.1rem; margin: 0.5rem 0; }
+.app-main h2 { font-size: 1.35rem; margin-top: 2.2rem; }
+.app-main h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+
+.app-hero {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid var(--app-line);
+}
+
+.app-intro {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.app-intro > img { flex: none; border-radius: 20px; }
+
+.app-tagline {
+    margin: 0;
+    color: var(--app-muted);
+    font-size: 1.15rem;
+}
+
+.app-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.6rem 0 0;
+    color: var(--app-muted);
+    font-size: 0.9rem;
+}
+
+.app-badge {
+    padding: 0.05rem 0.6rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    color: var(--app-accent);
+    font-weight: 600;
+}
+
+.app-badge[data-status="Available"] { color: var(--app-link); }
+
+.app-features { padding-left: 1.2rem; }
+.app-features li { margin: 0.35rem 0; }
+
+.app-shots {
+    display: flex;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.app-shots img {
+    flex: none;
+    height: 360px;
+    width: auto;
+    border-radius: 10px;
+    border: 1px solid var(--app-line);
+    scroll-snap-align: start;
+}
+
+.app-stores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.app-store {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    border-radius: 10px;
+    background: var(--app-accent);
+    color: var(--app-bg);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.app-store:hover {
+    color: var(--app-bg);
+    filter: brightness(1.1);
+}
+
+.app-note {
+    background: var(--app-panel);
+    border: 1px solid var(--app-line);
+    border-left: 4px solid var(--app-link);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+}
+
+.app-main table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.app-main th,
+.app-main td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.55rem 0.7rem;
+    border-bottom: 1px solid var(--app-line);
+}
+
+.app-main th { color: var(--app-accent); }
+
+.app-footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.25rem;
+    border-top: 1px solid var(--app-line);
+    color: var(--app-muted);
+    font-size: 0.9rem;
+}
+
+.app-footer p { margin: 0.3rem 0; }
+
+@media (max-width: 560px) {
+    .app-main h1 { font-size: 1.8rem; }
+    .app-intro { align-items: flex-start; }
+    .app-intro > img { width: 72px; height: 72px; }
+    .app-shots img { height: 300px; }
+    .app-main table { font-size: 0.92rem; }
+}

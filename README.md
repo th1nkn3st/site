@@ -14,6 +14,40 @@ Th1nkN3st is a content brand dedicated to cutting through the noise in the tech 
 
 Our mission: Help tech professionals discover tools that actually work, with zero marketing fluff.
 
+## 🎮 Games and Apps
+
+Every Th1nkN3st game or app gets three pages from one data file:
+
+| URL | What it is |
+| --- | --- |
+| `/<slug>/` | Landing page: hero, features, store buttons |
+| `/<slug>/privacy/` | Privacy policy, for the store listing and the in-app link |
+| `/<slug>/support/` | FAQ and contact, for the App Store "Support URL" |
+
+### Adding an app
+
+```bash
+python new_app.py my-app "My App"              # data file + all three pages
+python new_app.py my-app "My App" --card-only  # homepage card only, pages later
+```
+
+Then fill in `_data/apps/my-app.yml`. The comments in
+[`_app_template/app.yml`](_app_template/app.yml) explain every field. Put
+images in `assets/images/my-app/`.
+
+- **Homepage and contact page** list apps automatically, sorted by `order`.
+  An app's card links to its pages once the `my-app/` folder exists.
+- **Store buttons** appear when `status` is `Available` (or `Beta`, which
+  also shows the `testing` link). Before that, the page says "coming soon to …".
+- **Privacy policy** is generated from the `privacy:` block. Keep it truthful:
+  list every permission, third-party SDK (ads, analytics, crash reporting), and
+  any data that leaves the device, and bump `effective` when it changes.
+- **Look** comes from the `theme:` colours. Anything left out uses the studio palette.
+- **Extra intro text** goes in the body of `my-app/index.md`.
+
+Pull requests run the GitHub Pages build plus `python new_app.py --check _site`,
+so a broken page fails the PR instead of the live site.
+
 ## 🏗️ Tech Stack
 
 - **Generator**: Jekyll 3.9.5 (GitHub Pages compatible)
