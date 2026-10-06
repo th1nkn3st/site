@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: legacy
 title: Geek Culture
 permalink: /geek/
 ---

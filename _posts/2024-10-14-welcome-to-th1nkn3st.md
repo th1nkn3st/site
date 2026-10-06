@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: legacy
 title: "Welcome to Th1nkN3st: Smart Tools for Modern Tech Professionals"
 date: 2024-10-14 10:00:00 -0400
 categories: [announcements, devSecOps]
