@@ -1,0 +1,81 @@
+# Everything the site shows about Crownlines. See _app_template/app.yml for
+# what each field does.
+name: Crownlines
+order: 1
+category: game
+kind: Strategy board game
+status: Coming soon
+platforms: Android
+
+tagline: Outthink. Capture. Reign.
+summary: >-
+  A capture-and-crown duel based on Kharbaga, a traditional board game.
+  It has two rulesets, five AI levels, a campaign, puzzles, and Pass & Play.
+description: >-
+  Crownlines is a strategy board game for Android based on Kharbaga, the classic
+  capture-and-crown duel. Play the AI, solve puzzles, or pass and play with a friend.
+
+icon: /assets/images/crownlines/icon_play_512.png
+hero:
+  image: /assets/images/crownlines/feature_graphic.png
+  alt: "Crownlines: a carved board of jade and obsidian pieces"
+  width: 1024
+  height: 500
+
+features:
+  - title: Two rulesets.
+    text: Play on the fast 5×5 board, or on the traditional board with 20 pieces per side.
+  - title: Five AI levels.
+    text: They run from Novice to Master.
+  - title: Pass & Play.
+    text: Play a friend on one device, with an optional board flip.
+  - title: The Sunken Crown campaign.
+    text: 12 stages across three chapters, each with its own twist.
+  - title: Puzzles.
+    text: 16 hand-made tactical puzzles.
+  - title: An interactive tutorial.
+    text: It teaches moving, capturing, chaining, and crowning on a live board.
+  - title: Cosmetic piece sets and board themes.
+    text: You buy them with coins earned in play. There are no ads and no real-money purchases.
+
+stores:
+  google_play: com.th1nkn3st.crownlines
+
+theme:
+  bg: "#14100c"
+  panel: "#1f1912"
+  line: "#3a2e20"
+  text: "#e9e0d0"
+  muted: "#b3a690"
+  accent: "#f0c35a"
+  link: "#2fc4a8"
+  heading-font: '"Cinzel", "Trajan Pro", Georgia, "Times New Roman", serif'
+
+privacy:
+  effective: 2026-10-06
+  internet: false
+  collected: []
+  third_parties: []
+  on_device:
+    - data: Settings, such as sound, music, haptics, theme, and text size
+      purpose: Remembers your preferences
+    - data: "Progress: coins, campaign and puzzle stars, local ratings, badges, and owned cosmetics"
+      purpose: Keeps your progress between sessions
+    - data: The current match against the AI or in Pass & Play
+      purpose: Lets you continue where you left off
+  permissions:
+    - name: Vibrate
+      purpose: It is used for short haptic feedback during play. You can turn haptics off in the game's Settings.
+
+support:
+  faq:
+    - q: Does Crownlines need an internet connection?
+      a: No. Crownlines works fully offline, and it doesn't request internet access.
+    - q: How do I move my progress to a new phone?
+      a: >-
+        Progress is stored only on your device, so it can't be transferred yet.
+        Clearing the app's storage or uninstalling the game deletes it.
+    - q: What are the rules?
+      a: >-
+        The in-game tutorial teaches them on a live board. In short, captures are
+        compulsory and can chain, and pieces that reach the far side are crowned as Mullas.

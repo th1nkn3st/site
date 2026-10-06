@@ -1,0 +1,21 @@
+{%- comment -%}
+Sets app_slugs to the file names in _data/apps/, sorted by each app's `order`,
+and live_app_slugs to the ones whose /slug/ page exists.
+Look an app up with site.data.apps[slug].
+{%- endcomment -%}
+{%- assign app_keys = "" | split: "" -%}
+{%- for pair in site.data.apps -%}
+{%- assign padded_order = pair[1].order | default: 999 | prepend: "0000" | slice: -4, 4 -%}
+{%- capture app_key %}{{ padded_order }}|{{ pair[0] }}{% endcapture -%}
+{%- assign app_keys = app_keys | push: app_key -%}
+{%- endfor -%}
+{%- assign app_keys = app_keys | sort -%}
+{%- assign app_slugs = "" | split: "" -%}
+{%- assign live_app_slugs = "" | split: "" -%}
+{%- for app_key in app_keys -%}
+{%- assign app_slug = app_key | split: "|" | last -%}
+{%- assign app_slugs = app_slugs | push: app_slug -%}
+{%- capture app_url %}/{{ app_slug }}/{% endcapture -%}
+{%- assign app_page = site.pages | where: "url", app_url | first -%}
+{%- if app_page %}{% assign live_app_slugs = live_app_slugs | push: app_slug %}{% endif -%}
+{%- endfor -%}

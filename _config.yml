@@ -1,8 +1,8 @@
 # Site settings
 title: "Th1nkN3st"
-description: "Th1nkN3st is an independent maker of games and apps, including Crownlines, a strategy board game for Android."
+description: "Th1nkN3st is an independent maker of games and apps."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://th1nkn3st.com" # the base hostname & protocol for your site
+url: "https://www.th1nkn3st.com" # must match CNAME; th1nkn3st.com redirects here
 
 # Author information
 author: "Th1nkN3st"
@@ -117,6 +117,9 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - n8n_tools/
+  - new_app.py
+  - generate_redirects.py
+  - add_redirect.sh
 
 # Include files
 include:
