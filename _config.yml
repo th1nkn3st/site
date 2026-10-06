@@ -1,12 +1,12 @@
 # Site settings
 title: "Th1nkN3st"
-description: "Smart tech, gaming, geek picks, DIY, and DevSecOps. Real insights, curated gear, and honest reviews for tech enthusiasts and professionals."
+description: "Th1nkN3st is an independent maker of games and apps, including Crownlines, a strategy board game for Android."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://th1nkn3st.com" # the base hostname & protocol for your site
 
 # Author information
-author: "Th1nkN3st Team"
-email: "devsecopstips@gmail.com"
+author: "Th1nkN3st"
+email: "th1nkn3stdev@gmail.com"
 
 # Social media handles
 # Commented out until accounts are created
@@ -81,7 +81,7 @@ defaults:
       path: ""
       type: "tools"
     values:
-      layout: "default"
+      layout: "legacy"
   - scope:
       path: ""
       type: "gear"

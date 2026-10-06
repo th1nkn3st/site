@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: legacy
 permalink: /ai-compliance-automation-manual/
 reading_time: "8 min"
 title: "AI for Compliance: Solving the Real Problem — Manual Evidence"

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: legacy
 title: "Product Name Here"
 excerpt: "Short description for listing page."
 brand: "Brand Name"
