@@ -96,7 +96,7 @@ bundle update
 
 ## 📞 Contacts
 
-- **Email**: devsecopstips@gmail.com
+- **Email**: hello@th1nkn3st.com
 - **GitHub**: th1nkn3st/site
 
 ---

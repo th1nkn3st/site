@@ -3,7 +3,7 @@
 ## Reporting a Vulnerability
 
 If you discover a security vulnerability in Th1nkN3st, please report it to us at:
-- **Email**: th1nkn3stdev@gmail.com
+- **Email**: hello@th1nkn3st.com
 - **Subject Line**: [SECURITY] Brief description
 
 We will respond within 48 hours.

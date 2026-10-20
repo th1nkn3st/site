@@ -1,12 +1,12 @@
 # Site settings
-title: "Th1nkN3st"
-description: "Th1nkN3st is an independent maker of games and apps."
+title: "th1nkn3st"
+description: "A nest for curious minds. Independent games of strategy, adventure and discovery."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.th1nkn3st.com" # must match CNAME; th1nkn3st.com redirects here
 
 # Author information
-author: "Th1nkN3st"
-email: "th1nkn3stdev@gmail.com"
+author: "th1nkn3st"
+email: "hello@th1nkn3st.com"
 
 # Social media handles
 # Commented out until accounts are created
@@ -108,6 +108,14 @@ defaults:
 
 # Exclude files from processing
 exclude:
+  - assets/branding/th1nkn3st/SOURCE.md
+  - tools/
+  - assets/images/the-chaos-system/
+  - BRAND.md
+  - internal-docs/
+  - tmp/
+  - MAINTAINER.md
+  - QUICK_START.md
   - README.md
   - Gemfile
   - Gemfile.lock

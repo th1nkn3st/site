@@ -25,6 +25,9 @@ jobs:
       - name: Check app pages
         run: python3 new_app.py --check _site
 
+      - name: Check launch pages and teaser visibility
+        run: python3 tools/check_site.py _site
+
       - name: Upload built site
         uses: actions/upload-artifact@v4
         with:

@@ -6,30 +6,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <link rel="icon" type="image/svg+xml" href="{{ '/assets/logo.svg' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/studio.css?v=1' | relative_url }}">
+    <link rel="icon" type="image/jpeg" href="{{ '/assets/branding/th1nkn3st/th1nkn3st_studio_icon.jpg' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/studio.css?v=3' | relative_url }}">
     {% seo %}
 </head>
 
 <body>
+    <a class="st-skip" href="#main">Skip to content</a>
     <header class="st-header">
         <a href="{{ '/' | relative_url }}" class="st-brand">
-            <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="36" height="36">
-            <span>{{ site.title }}</span>
+            <img src="{{ '/assets/branding/th1nkn3st/th1nkn3st_studio_icon.jpg' | relative_url }}" alt="" width="44" height="44">
+            <span>{{ site.title }}<sup class="st-tm">™</sup></span>
         </a>
-        <nav class="st-nav">
-            <a href="{{ '/#projects' | relative_url }}">Projects</a>
-            <a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a>
+        <nav class="st-nav" aria-label="Main navigation">
+            <a href="{{ '/#projects' | relative_url }}">Our games</a>
+            <a href="{{ '/#studio' | relative_url }}">About</a>
+            <a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Support &amp; contact</a>
         </nav>
     </header>
 
-    <main class="st-main">
+    <main class="st-main" id="main">
         {{ content }}
     </main>
 
     <footer class="st-footer">
-        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-        <p>© {{ 'now' | date: "%Y" }} {{ site.title }}</p>
+        <div class="st-footer-top"><p><strong>{{ site.title }}™</strong> · Independent game studio</p><nav aria-label="Footer"><a href="{{ '/crownlines/' | relative_url }}">Crownlines</a><a href="{{ '/crownlines/support/' | relative_url }}">Game support</a><a href="{{ '/crownlines/privacy/' | relative_url }}">Crownlines privacy</a><a href="{{ '/crownlines/licenses/' | relative_url }}">Credits</a></nav></div>
+        <div class="st-footer-bottom"><p>© {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
     </footer>
 </body>
 </html>

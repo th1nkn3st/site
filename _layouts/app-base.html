@@ -9,6 +9,9 @@
 {%- when 'support' -%}
 {%- capture page_title %}{{ app.name }} Support{% endcapture -%}
 {%- capture page_description %}Help, common questions, and contact details for {{ app.name }}.{% endcapture -%}
+{%- when 'licenses' -%}
+{%- capture page_title %}{{ app.name }} Credits and Licenses{% endcapture -%}
+{%- capture page_description %}Music, font and software credits for {{ app.name }}.{% endcapture -%}
 {%- else -%}
 {%- assign page_title = app.name -%}
 {%- assign page_description = app.description | default: app.summary -%}
@@ -34,7 +37,7 @@
     <meta name="twitter:card" content="{% if app.hero.image %}summary_large_image{% else %}summary{% endif %}">
     {%- endif %}
     <link rel="icon" href="{{ app.icon | default: '/assets/logo.svg' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/app.css?v=1' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/app.css?v=3' | relative_url }}">
     {%- if app.theme %}
     <style>:root { {% for pair in app.theme %}--app-{{ pair[0] }}: {{ pair[1] }}; {% endfor %}}</style>
     {%- endif %}
@@ -58,6 +61,8 @@
 </head>
 
 <body>
+    <a class="app-skip" href="#main">Skip to content</a>
+    <div class="app-studio-strip"><a href="{{ '/' | relative_url }}"><img src="{{ '/assets/branding/th1nkn3st/th1nkn3st_studio_icon.jpg' | relative_url }}" alt="" width="36" height="36"><span>th1nkn3st<sup>™</sup></span></a><span>A nest for curious minds.</span><a href="{{ '/#projects' | relative_url }}">Explore our games ↗</a></div>
     <header class="app-header">
         <a href="{{ app_url | relative_url }}" class="app-brand">
             {%- if app.icon %}
@@ -65,14 +70,15 @@
             {%- endif %}
             <span>{{ app.name }}</span>
         </a>
-        <nav class="app-nav">
+        <nav class="app-nav" aria-label="Crownlines navigation">
             <a href="{{ app_url | relative_url }}" {% if layout.nav == 'overview' %}aria-current="page"{% endif %}>{{ overview_label }}</a>
             <a href="{{ app_url | append: 'privacy/' | relative_url }}" {% if layout.nav == 'privacy' %}aria-current="page"{% endif %}>Privacy</a>
             <a href="{{ app_url | append: 'support/' | relative_url }}" {% if layout.nav == 'support' %}aria-current="page"{% endif %}>Support</a>
+            <a href="{{ app_url | append: 'licenses/' | relative_url }}" {% if layout.nav == 'licenses' %}aria-current="page"{% endif %}>Credits</a>
         </nav>
     </header>
 
-    <main class="app-main">
+    <main class="app-main{% if layout.nav == 'overview' %} app-main-overview{% endif %}" id="main">
         {%- if app %}
         {{ content }}
         {%- else %}
@@ -81,6 +87,7 @@
     </main>
 
     <footer class="app-footer">
+        <p><a href="{{ '/#coming-soon' | relative_url }}">More from the studio</a> · <a href="{{ app_url | append: 'privacy/' | relative_url }}">Privacy</a> · <a href="{{ app_url | append: 'support/' | relative_url }}">Support</a> · <a href="{{ app_url | append: 'licenses/' | relative_url }}">Credits &amp; licenses</a></p>
         <p>{{ app.name }} is made by <a href="{{ '/' | relative_url }}">{{ site.title }}</a>. Contact: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
         <p>© {{ 'now' | date: "%Y" }} {{ site.title }}</p>
     </footer>

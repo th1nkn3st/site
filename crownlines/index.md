@@ -1,5 +1,5 @@
 ---
-layout: app
+layout: crownlines
 app: crownlines
 permalink: /crownlines/
 ---

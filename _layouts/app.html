@@ -56,6 +56,15 @@ nav: overview
 </ul>
 {% endif %}
 
+{% if app.campaign_gift %}
+<section class="app-gift">
+    <img src="{{ app.campaign_gift.image | relative_url }}" alt="{{ app.campaign_gift.alt | escape }}" loading="lazy" width="1536" height="1024">
+    <p class="app-gift-caption">Promotional illustration · See the actual pieces in game</p>
+    <h2>{{ app.campaign_gift.title }}</h2>
+    <p>{{ app.campaign_gift.text }}</p>
+</section>
+{% endif %}
+
 <h2>Get it</h2>
 {% if app.status == "Available" or app.status == "Beta" %}
 <div class="app-stores">

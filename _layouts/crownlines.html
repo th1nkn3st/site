@@ -1,0 +1,43 @@
+---
+layout: app-base
+nav: overview
+---
+{% assign app = site.data.apps[page.app] %}
+<section class="cl-hero" aria-labelledby="game-title">
+    <div class="cl-hero-copy">
+        <p class="cl-eyebrow">An offline strategy duel</p>
+        <h1 id="game-title">Crownlines</h1>
+        <p class="cl-tagline">Outthink. Capture. Reign.</p>
+        <p>Every move changes the board. Find the jump, chain your captures, and crown the piece that turns the game.</p>
+        {% if app.status == 'Available' or app.status == 'Beta' %}
+        <a class="app-store" href="https://play.google.com/store/apps/details?id={{ app.stores.google_play }}">Get it on Google Play ↗</a>
+        {% else %}
+        <p class="cl-availability"><span aria-hidden="true"></span>Coming soon to Google Play</p>
+        {% endif %}
+        <a class="cl-text-link" href="#gameplay">See how it plays ↓</a>
+    </div>
+    <img class="cl-hero-art" src="{{ app.hero.image | relative_url }}" alt="{{ app.hero.alt | escape }}" width="1024" height="500">
+</section>
+
+<div class="cl-facts" aria-label="Game details"><p><strong>Play offline</strong><span>No account required</span></p><p><strong>No ads or purchases</strong><span>Cosmetics earned through play</span></p><p><strong>Solo or Pass &amp; Play</strong><span>AI opponents or a friend nearby</span></p></div>
+
+<section class="cl-section" aria-labelledby="how-heading">
+    <p class="cl-eyebrow">Easy to begin. More to discover.</p><h2 id="how-heading">One board. A different story every match.</h2>
+    <p class="cl-lead">Inspired by Kharbaga, the classic capture-and-crown duel. Learn the essentials with guided practice, then find your own way across the board.</p>
+    <ol class="cl-steps"><li><span>01</span><h3>Find your move.</h3><p>Move forward to build your position. When a capture is available, you must take it.</p></li><li><span>02</span><h3>Follow the chain.</h3><p>Jump your opponent's pieces. Keep capturing when another jump opens up.</p></li><li><span>03</span><h3>Claim the crown.</h3><p>Reach the far side to become a Mulla, with movement and captures in any direction.</p></li></ol>
+</section>
+
+<section class="cl-section" id="gameplay" aria-labelledby="gameplay-heading">
+    <div class="cl-section-heading"><div><p class="cl-eyebrow">On the board</p><h2 id="gameplay-heading">See your next move.</h2></div><p>Gameplay previews from the development build.</p></div>
+    <div class="cl-gallery"><figure><img src="{{ '/assets/images/crownlines/gameplay-traditional.png' | relative_url }}" alt="Traditional Crownlines board with jade and obsidian pieces and a required capture highlighted" width="1080" height="1570" loading="lazy"><figcaption>Traditional strategy. Every capture counts.</figcaption></figure><figure><img src="{{ '/assets/images/crownlines/gameplay-lanterns.png' | relative_url }}" alt="Fast Crownlines board with pumpkin and phantom pieces from the included lantern set" width="390" height="844" loading="lazy"><figcaption>A faster board. A haunting new look.</figcaption></figure></div>
+</section>
+
+<section class="cl-section" aria-labelledby="ways-heading"><p class="cl-eyebrow">Find your way to play</p><h2 id="ways-heading">Practice, explore, or challenge a friend.</h2>
+    <div class="cl-modes"><article><h3>Your pace. Your board.</h3><p>Choose Fast or Traditional, then work your way through five AI levels, from Novice to Master. Guided practice helps you get started.</p></article><article><h3>A puzzle worth solving.</h3><p>Take on 16 tactical puzzles, with both board rulesets available. Retry a position and discover the capture you missed.</p></article><article><h3>An expedition to remember.</h3><p>Follow The Sunken Crown through 12 challenges and three chapters, with opening twists that change the battle.</p></article><article><h3>Someone across the board.</h3><p>Pass &amp; Play with a friend on one device. Optional board rotation keeps the next move facing the next player.</p></article></div>
+</section>
+
+<section class="cl-gift" aria-labelledby="gift-heading"><div><p class="cl-eyebrow">Included with the first campaign</p><h2 id="gift-heading">Lanterns of<br>the Sunken Crown.</h2><p>A little mystery. A set to keep. Open the campaign to claim the Graveyard board and Jack-o'-Lantern pieces, then equip them from Collection.</p><p class="cl-gift-note">No coin cost. No countdown. Yours beyond Halloween.</p></div><figure><img src="{{ app.campaign_gift.image | relative_url }}" alt="{{ app.campaign_gift.alt | escape }}" width="1536" height="1024" loading="lazy"><figcaption>Promotional illustration. Playable pieces shown above.</figcaption></figure></section>
+
+<section class="cl-section cl-faq" aria-labelledby="faq-heading"><p class="cl-eyebrow">Before you play</p><h2 id="faq-heading">A few useful answers.</h2>{% for item in app.support.faq %}<details><summary>{{ item.q }}</summary><p>{{ item.a }}</p></details>{% endfor %}</section>
+
+<section class="cl-help"><div><h2>Need a hand?</h2><p>Find game help, report a problem, or get in touch with the studio.</p></div><a class="app-store" href="{{ '/crownlines/support/' | relative_url }}">Crownlines support ↗</a></section>

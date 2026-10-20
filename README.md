@@ -1,22 +1,22 @@
-# Th1nkN3st
+# th1nkn3st
 
-**Smart Tools • Real Insights • Zero Hype**
+**A nest for curious minds.**
 
-Welcome to the source repository for [Th1nkN3st](https://www.th1nkn3st.com) — a curated tech and automation content platform focused on DevSecOps tools, automation gadgets, and practical insights for professionals.
+The GitHub Pages site for [th1nkn3st](https://www.th1nkn3st.com), an independent studio making Crownlines, The Chaos System, and Project Arc (working title TISA: The Journey Begins).
 
 ## 🎯 About
 
-Th1nkN3st is a content brand dedicated to cutting through the noise in the tech world. We review and recommend:
+The Thought Nest studio identity connects three distinct games:
 
-- **DevSecOps Tools** — Security automation, monitoring, and infrastructure tools
-- **Automation Gadgets** — Productivity enhancers and workflow optimizers
-- **Tech Insights** — Practical guides and honest reviews
+- **Crownlines** — offline strategy duels, preparing for Android.
+- **The Chaos System** — a brief description and Coming soon; no public artwork or feature reveal.
+- **TISA: The Journey Begins** — a brief description and Coming soon; no public artwork or feature reveal.
 
-Our mission: Help tech professionals discover tools that actually work, with zero marketing fluff.
+See [BRAND.md](BRAND.md) for identity, naming and contribution rules. The owner is not an LLC and no registered trademark is claimed. Historical tech articles and routes remain available; the home page now leads with the games.
 
 ## 🎮 Games and Apps
 
-Every Th1nkN3st game or app gets three pages from one data file:
+Store-facing apps get landing, privacy, and support pages from one data file. Crownlines also has a dedicated launch layout and a full credits page at `/crownlines/licenses/`. Its in-game policy and license links match these routes. Upcoming games use a minimal text-only `project` layout; do not add logos, feature reveals or guessed privacy policies for them.
 
 | URL | What it is |
 | --- | --- |
@@ -153,7 +153,7 @@ No manual build or deployment steps required!
 
 We take security seriously. If you discover a security vulnerability, please see our [Security Policy](SECURITY.md) or contact us at:
 
-📧 **devsecopstips@gmail.com**
+📧 **hello@th1nkn3st.com**
 
 For general inquiries, feedback, or collaboration opportunities, feel free to reach out!
 
@@ -181,7 +181,7 @@ The Jekyll site structure and custom code in this repository are available for r
 ## 📞 Connect
 
 - **Website**: [th1nkn3st.com](https://www.th1nkn3st.com)
-- **Email**: devsecopstips@gmail.com
+- **Email**: hello@th1nkn3st.com
 - **Twitter**: [@th1nkn3st](https://twitter.com/th1nkn3st)
 - **LinkedIn**: [company/th1nkn3st](https://linkedin.com/company/th1nkn3st)
 - **Pinterest**: [th1nkn3st](https://pinterest.com/th1nkn3st)
