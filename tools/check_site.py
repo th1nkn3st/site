@@ -77,6 +77,11 @@ def check(root, baseurl):
     for file in root.rglob("*"):
         if not file.is_file():
             continue
+        relative = file.relative_to(root)
+        if any(part in ("internal-docs", "tmp", "node_modules", ".git") for part in relative.parts) or file.suffix in (".py", ".ps1") or file.name.startswith(".env"):
+            failures.append(f"Private or development file in published output: {relative}")
+        if any(part in ("go", "gear", "_gear", "_posts") for part in relative.parts):
+            failures.append(f"Retired affiliate or blog content in published output: {relative}")
         if "the-chaos-system" in file.parts and file.suffix.lower() in (".png", ".jpg", ".webp", ".svg"):
             failures.append(f"Unreleased game artwork in published output: {file.relative_to(root)}")
         if file.suffix == ".html" and "/assets/images/the-chaos-system/" in file.read_text(encoding="utf-8", errors="ignore"):

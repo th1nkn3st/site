@@ -1,41 +1,7 @@
-# Security Policy
+# Security policy
 
-## Reporting a Vulnerability
+Report suspected vulnerabilities privately to **hello@th1nkn3st.com**, with `[SECURITY]` in the subject. Include the affected URL or file, reproduction steps, and the potential impact. Do not include passwords, private keys or unrelated personal information.
 
-If you discover a security vulnerability in Th1nkN3st, please report it to us at:
-- **Email**: hello@th1nkn3st.com
-- **Subject Line**: [SECURITY] Brief description
+This repository contains a static studio showcase and game-support site. It does not operate accounts, checkout, a database, or a hosted game service. Relevant reports include unsafe links, injected content, exposed credentials, and dependency issues.
 
-We will respond within 48 hours.
-
-## Scope
-
-This is a static Jekyll site hosted on GitHub Pages. Security concerns include:
-- XSS vulnerabilities in user-submitted content
-- Malicious links or affiliate URL manipulation
-- Social engineering via comments or external links
-- Privacy concerns with tracking/analytics
-
-## Out of Scope
-
-- Server-side vulnerabilities (no server-side code)
-- Database issues (no database)
-- Issues with third-party services (GitHub, DNS providers)
-
-## Security Best Practices
-
-We follow these security practices:
-1. No user authentication or data collection
-2. All external links use `rel="noopener noreferrer"`
-3. Content Security Policy headers configured
-4. Regular dependency updates
-5. Public repository for transparency
-
-## Disclosure Policy
-
-- We will acknowledge receipt within 48 hours
-- We will provide a fix timeline within 7 days
-- We will credit reporters (unless they prefer anonymity)
-- We will publish security advisories for confirmed vulnerabilities
-
-Thank you for helping keep Th1nkN3st secure!
+Please allow time to investigate before disclosing details publicly. Response and remediation times depend on severity and availability; no response-time guarantee is made. GitHub infrastructure and unrelated third-party services should be reported to their respective providers.
