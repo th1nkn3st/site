@@ -62,7 +62,7 @@ theme:
   muted: "#b3a690"
   accent: "#f0c35a"
   link: "#2fc4a8"
-  heading-font: '"Cinzel", Georgia, "Times New Roman", serif'
+  heading-font: '"Bangers", Impact, sans-serif'
   body-font: '"Outfit", system-ui, sans-serif'
 
 privacy:

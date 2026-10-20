@@ -8,6 +8,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="icon" type="image/jpeg" href="{{ '/assets/branding/th1nkn3st/th1nkn3st_studio_icon.jpg' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/studio.css?v=3' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/brand.css?v=1' | relative_url }}">
     {% seo %}
 </head>
 
@@ -16,7 +17,7 @@
     <header class="st-header">
         <a href="{{ '/' | relative_url }}" class="st-brand">
             <img src="{{ '/assets/branding/th1nkn3st/th1nkn3st_studio_icon.jpg' | relative_url }}" alt="" width="44" height="44">
-            <span>{{ site.title }}<sup class="st-tm">™</sup></span>
+            <span class="studio-wordmark">Th1nkn3st<sup>™</sup></span>
         </a>
         <nav class="st-nav" aria-label="Main navigation">
             <a href="{{ '/#projects' | relative_url }}">Our games</a>
@@ -30,7 +31,7 @@
     </main>
 
     <footer class="st-footer">
-        <div class="st-footer-top"><p><strong>{{ site.title }}™</strong> · Independent game studio</p><nav aria-label="Footer"><a href="{{ '/crownlines/' | relative_url }}">Crownlines</a><a href="{{ '/crownlines/support/' | relative_url }}">Game support</a><a href="{{ '/crownlines/privacy/' | relative_url }}">Crownlines privacy</a><a href="{{ '/crownlines/licenses/' | relative_url }}">Credits</a></nav></div>
+        <div class="st-footer-top"><p><strong class="studio-wordmark">Th1nkn3st<sup>™</sup></strong> · Independent game studio</p><nav aria-label="Footer"><a href="{{ '/crownlines/' | relative_url }}">Crownlines</a><a href="{{ '/crownlines/support/' | relative_url }}">Game support</a><a href="{{ '/crownlines/privacy/' | relative_url }}">Crownlines privacy</a><a href="{{ '/crownlines/licenses/' | relative_url }}">Credits</a></nav></div>
         <div class="st-footer-bottom"><p>© {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
     </footer>
 </body>

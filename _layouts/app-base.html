@@ -38,6 +38,7 @@
     {%- endif %}
     <link rel="icon" href="{{ app.icon | default: '/assets/logo.svg' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/app.css?v=3' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/brand.css?v=1' | relative_url }}">
     {%- if app.theme %}
     <style>:root { {% for pair in app.theme %}--app-{{ pair[0] }}: {{ pair[1] }}; {% endfor %}}</style>
     {%- endif %}
@@ -62,7 +63,7 @@
 
 <body>
     <a class="app-skip" href="#main">Skip to content</a>
-    <div class="app-studio-strip"><a href="{{ '/' | relative_url }}"><img src="{{ '/assets/branding/th1nkn3st/th1nkn3st_studio_icon.jpg' | relative_url }}" alt="" width="36" height="36"><span>th1nkn3st<sup>™</sup></span></a><span>A nest for curious minds.</span><a href="{{ '/#projects' | relative_url }}">Explore our games ↗</a></div>
+    <div class="app-studio-strip"><a href="{{ '/' | relative_url }}"><img src="{{ '/assets/branding/th1nkn3st/th1nkn3st_studio_icon.jpg' | relative_url }}" alt="" width="36" height="36"><span class="studio-wordmark">Th1nkn3st<sup>™</sup></span></a><span>A nest for curious minds.</span><a href="{{ '/#projects' | relative_url }}">Explore our games ↗</a></div>
     <header class="app-header">
         <a href="{{ app_url | relative_url }}" class="app-brand">
             {%- if app.icon %}
