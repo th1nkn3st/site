@@ -1,0 +1,82 @@
+# Copied to _data/apps/SLUG.yml by `python new_app.py SLUG "APP NAME"`.
+# The file name (SLUG) is the app's URL: /SLUG/, /SLUG/privacy/, /SLUG/support/.
+# Those pages are live while the SLUG/ folder exists. Without that folder the
+# app is only a card on the homepage. Optional fields can be deleted.
+
+name: APP NAME
+order: 10                      # Position on the homepage; lower comes first.
+category: app                  # "game" or "app".
+kind: Utility app              # Short label under the name, e.g. "Puzzle game".
+status: In development         # "In development", "Coming soon", "Beta", or "Available".
+platforms: Android             # Free text, e.g. "Android and iOS".
+
+tagline: One short line.       # Optional.
+summary: >-
+  One or two sentences for the homepage card and the landing page intro.
+description: >-
+  Search-engine description for the landing page, about 150 characters.
+
+icon: /assets/images/SLUG/icon_512.png   # Optional. Square, 512×512 works well.
+# hero:                        # Optional wide banner at the top of the landing page.
+#   image: /assets/images/SLUG/feature_graphic.png
+#   alt: Describe the image.
+#   width: 1024
+#   height: 500
+# screenshots:                 # Optional, shown in a scrolling strip.
+#   - src: /assets/images/SLUG/screen1.png
+#     alt: Describe the screen.
+
+features:                      # Optional.
+  - title: Feature name.
+    text: One sentence about it.
+
+stores:                        # Store buttons appear only when status is "Available" or "Beta".
+  google_play: com.th1nkn3st.SLUG   # Android package name.
+  # app_store: https://apps.apple.com/app/id0000000000
+  # steam: https://store.steampowered.com/app/000000/
+  # itch: https://th1nkn3st.itch.io/SLUG
+  # web: https://example.com/play
+  # testing: https://play.google.com/apps/testing/com.th1nkn3st.SLUG
+
+theme:                         # Optional. Any colour left out uses the studio default.
+  bg: "#111318"
+  panel: "#191c23"
+  line: "#2a2f39"
+  text: "#e8e6e1"
+  muted: "#a3a7b0"
+  accent: "#f2b544"            # Headings, buttons, active nav.
+  link: "#3cc6b0"
+  # heading-font: 'Georgia, serif'
+
+privacy:
+  effective: 2026-01-01        # Change this date whenever the policy changes.
+  internet: false              # Does the app use the network at all?
+  collected: []                # Personal data that leaves the device. Empty = none. Example:
+  #  - data: Email address
+  #    purpose: Signing in and account recovery
+  #    shared_with: Not shared
+  third_parties: []            # SDKs or services, e.g. ads, analytics, crash reports. Example:
+  #  - name: Google AdMob
+  #    purpose: Shows ads and measures ad performance
+  #    policy: https://policies.google.com/technologies/ads
+  on_device:                   # Data saved locally that never leaves the device.
+    - data: Settings
+      purpose: Remembers your preferences
+  permissions: []              # Android permissions the app requests. Example:
+  #  - name: Vibrate
+  #    purpose: Haptic feedback. You can turn it off in Settings.
+  # purchases: true            # true if the app sells anything through the store.
+  # accounts:                  # Only if the app has accounts. Google Play requires a deletion route.
+  #   deletion: >-
+  #     In the app, open Settings > Account > Delete account, or email us from the
+  #     address on your account.
+  # children: >-               # Optional. Replaces the default "not directed at children under 13" text.
+  #   ...
+  # extra: |                   # Optional Markdown added before "Changes to this policy".
+  #   ## Another section
+  #   ...
+
+support:
+  faq: []                      # Example:
+  #  - q: Question?
+  #    a: Answer.

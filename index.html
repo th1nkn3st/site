@@ -1,39 +1,46 @@
 ---
 layout: default
-title: Th1nkN3st
-description: "Th1nkN3st is an independent maker of games and apps, including Crownlines, a strategy board game for Android."
+title: th1nkn3st
+description: "Independent games of strategy, adventure and discovery. Meet Crownlines, coming soon to Android."
+image: /assets/branding/th1nkn3st/th1nkn3st_studio_logo.jpg
 ---
+{% assign crownlines = site.data.apps.crownlines %}
+<section class="st-hero" aria-labelledby="studio-heading">
+    <div class="st-hero-copy">
+        <p class="st-eyebrow">Independent game studio</p>
+        <h1 id="studio-heading">A nest for<br><span>curious minds.</span></h1>
+        <p>Games of strategy, adventure, and discovery.<br>Different worlds. The same curious spirit.</p>
+        <a class="st-button" href="{{ '/crownlines/' | relative_url }}">Discover Crownlines <span aria-hidden="true">↗</span></a>
+    </div>
+    <img class="st-nest" src="{{ '/assets/branding/th1nkn3st/th1nkn3st_studio_icon.jpg' | relative_url }}" alt="The th1nkn3st Thought Nest emblem" width="1024" height="1024">
+</section>
 
-<section class="st-hero">
-    <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="104" height="104">
-    <div>
-        <h1>{{ site.title }}</h1>
-        <p>Independent games and apps, made for the fun of building them.</p>
+<section id="projects" aria-labelledby="featured-heading">
+    <div class="st-section-heading"><p class="st-eyebrow">Our games</p><span>Strategy starts here.</span></div>
+    <article class="st-feature" data-project="crownlines">
+        <div class="st-feature-copy">
+            <p class="st-kicker">Strategy board game <span>·</span> Android</p>
+            <h2 id="featured-heading">Crownlines</h2>
+            <p class="st-feature-tagline">Outthink. Capture. Reign.</p>
+            <p>A clever move is only the beginning. Chain your captures, crown your pieces, and turn the board in your favour.</p>
+            <p class="st-feature-facts">Offline play <span>·</span> Five AI levels <span>·</span> Pass &amp; Play</p>
+            <div class="st-feature-actions"><a class="st-button" href="{{ '/crownlines/' | relative_url }}">Explore the game ↗</a><span class="st-status">{{ crownlines.status }}{% if crownlines.status == 'Coming soon' %} to Android{% endif %}</span></div>
+        </div>
+        <a class="st-feature-art" href="{{ '/crownlines/' | relative_url }}" aria-label="Explore Crownlines"><img src="{{ crownlines.card_image | relative_url }}" alt="Crownlines jade and obsidian pieces on a carved strategy board" width="1024" height="500" loading="lazy"></a>
+    </article>
+</section>
+
+<section class="st-upcoming" id="coming-soon" aria-labelledby="upcoming-heading">
+    <div class="st-section-heading"><div><p class="st-eyebrow">Still in the nest</p><h2 id="upcoming-heading">More to come.</h2></div><p>A first glimpse. More when we're ready.</p></div>
+    <div class="st-teasers">
+        {% for slug in site.data.studio_teasers %}
+        {% assign game = site.data.apps[slug] %}
+        <article class="st-teaser" data-project="{{ slug }}"><div><h3>{{ game.name }}</h3><p>{{ game.summary }}</p></div><span class="st-status">Coming soon</span></article>
+        {% endfor %}
     </div>
 </section>
 
-<section id="projects">
-    <h2 class="st-section-title">Projects</h2>
-    <div class="st-grid">
-        {% for project in site.data.projects %}
-        {% if project.url %}<a class="st-card" href="{{ project.url | relative_url }}">{% else %}<div class="st-card">{% endif %}
-            <div class="st-card-head">
-                {% if project.image %}
-                <img src="{{ project.image | relative_url }}" alt="" width="56" height="56">
-                {% else %}
-                <span class="st-card-placeholder" aria-hidden="true">{{ project.name | slice: 0 }}</span>
-                {% endif %}
-                <div>
-                    <h3>{{ project.name }}</h3>
-                    <p class="st-card-kind">{{ project.kind }}</p>
-                </div>
-            </div>
-            <p>{{ project.blurb }}</p>
-            <div class="st-card-meta">
-                <span class="st-badge" data-status="{{ project.status }}">{{ project.status }}</span>
-                <span>{{ project.platforms }}</span>
-            </div>
-        {% if project.url %}</a>{% else %}</div>{% endif %}
-        {% endfor %}
-    </div>
+<section class="st-about" id="studio" aria-labelledby="about-heading">
+    <div><p class="st-eyebrow">About the studio</p><h2 id="about-heading">Thoughtful games.<br>Room to explore.</h2></div>
+    <div><p>th1nkn3st—pronounced “Thinknest”—is an independent game studio. We make games that invite you to think, explore, and discover something new.</p><p>Our Thought Nest mark brings different ideas together. Each game keeps its own character, with the same care behind it.</p><a class="st-text-link" href="{{ '/contact/' | relative_url }}">Contact the studio ↗</a></div>
 </section>

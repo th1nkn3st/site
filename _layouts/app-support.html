@@ -1,0 +1,29 @@
+---
+layout: app-base
+nav: support
+---
+{%- assign app = site.data.apps[page.app] -%}
+{%- assign app_url = '/' | append: page.app | append: '/' -%}
+{%- capture subject %}{{ app.name }} support{% endcapture -%}
+
+<h1>{{ app.name }} Support</h1>
+
+<p>Need help with {{ app.name }}? Check the common questions below, or email us.</p>
+
+{% if app.support.faq.size > 0 %}
+<h2>Common questions</h2>
+{%- for item in app.support.faq %}
+<h3>{{ item.q }}</h3>
+{{ item.a | markdownify }}
+{%- endfor %}
+{% endif %}
+
+<h2>Contact us</h2>
+<p>
+    Email <a href="mailto:{{ site.email }}?subject={{ subject | uri_escape }}">{{ site.email }}</a>.
+    When reporting a bug, please say which version of {{ app.name }} you have, your device
+    model, and what happened.
+</p>
+
+<h2>Privacy</h2>
+<p>See the <a href="{{ app_url | append: 'privacy/' | relative_url }}">{{ app.name }} privacy policy</a>.</p>
