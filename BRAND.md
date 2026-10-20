@@ -2,6 +2,8 @@
 
 Studio name: **th1nkn3st™**, pronounced Thinknest. Studio line: **A nest for curious minds.**
 
+The live studio wordmark follows TISA: Bangers lettering in ice white, with a dark edge and soft green glow, beside the little Thought Nest emblem. Website Crownlines headings use Bangers; its Android interface retains its existing typography.
+
 The Thought Nest uses interwoven strokes holding three distinct idea forms. Preserve the original artwork and its proportions. Studio palette: black `#000000`, warm white `#F7F3E8`, aqua `#45C7C1`, tangerine `#FF8A4C`, leaf green `#73B85A`.
 
 Crownlines retains its own walnut/brass and jade/obsidian game identity. The studio emblem is an endorsement, not a replacement for the game's icon.

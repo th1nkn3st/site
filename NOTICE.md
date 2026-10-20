@@ -8,6 +8,7 @@ No unreleased Chaos System or TISA game logos or preview artwork are included in
 
 ## Fonts
 
+- Bangers: Copyright 2010 The Bangers Project Authors. SIL Open Font License 1.1. Full notice: [Bangers-OFL.txt](assets/fonts/Bangers-OFL.txt).
 - Cinzel: Copyright 2020 The Cinzel Project Authors; Copyright 2012 Natanael Gama. SIL Open Font License 1.1. Full notice: [Cinzel-OFL.txt](assets/fonts/Cinzel-OFL.txt).
 - Outfit: The Outfit Project Authors. SIL Open Font License 1.1. Full notice: [Outfit-OFL.txt](assets/fonts/Outfit-OFL.txt).
 

@@ -1,0 +1,46 @@
+@font-face {
+    font-family: Bangers;
+    src: url('fonts/Bangers-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Shared TISA studio treatment; the Thought Nest stays a separate emblem. */
+.st-brand img, .app-studio-strip img, .st-nest {
+    mix-blend-mode: screen;
+}
+.studio-wordmark {
+    font-family: Bangers, Impact, sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .025em;
+    line-height: 1.2;
+    color: #f2f4f7;
+    text-shadow: -1px 0 #15181d, 1px 0 #15181d, 0 -1px #15181d,
+        0 1px #15181d, 0 0 3px #2dbe6c, 0 0 9px #2dbe6c99;
+}
+.studio-wordmark sup {
+    font-family: system-ui, sans-serif;
+    font-size: .35em;
+    font-weight: 500;
+    vertical-align: super;
+    margin-left: .2em;
+    text-shadow: none;
+}
+.st-footer .studio-wordmark { font-size: 1.25rem; }
+.app-studio-strip .studio-wordmark { font-size: 1.65rem; }
+.st-feature h2 {
+    font-family: Bangers, Impact, sans-serif;
+    font-weight: 400;
+    letter-spacing: .02em;
+}
+.cl-hero h1, .app-brand > span {
+    font-family: Bangers, Impact, sans-serif;
+    font-weight: 400;
+    letter-spacing: .02em;
+}
+@media (max-width: 560px) {
+    .studio-wordmark { font-size: 1.8rem; }
+}

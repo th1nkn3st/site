@@ -54,6 +54,12 @@ for this engine version is in Godot's
 
 ## Fonts
 
+### Bangers — studio intro
+
+Copyright 2010 The Bangers Project Authors (https://github.com/googlefonts/bangers).
+The unmodified font is distributed under the SIL Open Font License 1.1, whose
+full text appears below. The app also bundles `licenses/Bangers-OFL.txt`.
+
 ### Cinzel
 
 <pre class="cl-license">Copyright 2020 The Cinzel Project Authors (https://github.com/NDISCOVER/Cinzel)
