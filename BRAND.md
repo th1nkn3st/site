@@ -8,6 +8,8 @@ The Thought Nest uses interwoven strokes holding three distinct idea forms. Pres
 
 Crownlines retains its own walnut/brass and jade/obsidian game identity. The studio emblem is an endorsement, not a replacement for the game's icon.
 
+Print Profit is the studio's practical Android app for 3D-print sellers. It retains its mint/cyan cube and profit-line identity with readable utility typography. The shared nest and Bangers wordmark identify the publisher; the calculator does not use a game-style splash delay. Public product, support, privacy and terms pages are authorized; Google Play availability remains Coming soon until verified.
+
 ## Public reveal rules
 
 - Crownlines: full launch information, accurate development gameplay previews, campaign/gift, support, privacy and credits.

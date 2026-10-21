@@ -29,6 +29,7 @@ jobs:
         run: python3 tools/check_site.py _site
 
       - name: Upload built site
+        continue-on-error: true # Preview retention must not block checks if artifact storage is full.
         uses: actions/upload-artifact@v4
         with:
           name: site
