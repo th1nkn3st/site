@@ -31,7 +31,8 @@ class Page(HTMLParser):
 def check(root, baseurl):
     routes = ("/", "/contact/", "/crownlines/", "/crownlines/privacy/",
               "/crownlines/support/", "/crownlines/licenses/",
-              "/games/the-chaos-system/", "/games/project-arc/")
+              "/games/the-chaos-system/", "/games/project-arc/",
+              "/print-profit/", "/print-profit/support/", "/print-profit/privacy/", "/print-profit/terms/")
     failures = []
     parsed = {}
 

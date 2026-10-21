@@ -14,6 +14,8 @@ Source for [www.th1nkn3st.com](https://www.th1nkn3st.com), the th1nkn3st studio 
 | `/crownlines/support/` | FAQ and contact |
 | `/crownlines/licenses/` | Software, font and music credits |
 | `/contact/` | Studio enquiries and game support |
+| `/print-profit/` | Android calculator for 3D-print sellers, Free/Pro offer and testing contact |
+| `/print-profit/privacy/`, `/print-profit/support/`, `/print-profit/terms/` | App policy, support and purchase/estimate terms |
 
 The Chaos System and TISA have brief, text-only coming-soon pages. Their logos and detailed previews are not public.
 
